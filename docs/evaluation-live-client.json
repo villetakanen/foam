@@ -1,0 +1,60 @@
+{
+  "model": "gemma4:e4b",
+  "records": [
+    {
+      "trial": 1,
+      "condition": "foam",
+      "cue": "That old plumber reminder appeared again. What is the situation?",
+      "suppliedContext": "The client noted the reappearance of an old plumber reminder, initiating a query regarding the current status of the established plumbing issue, which was previously documented as resolved.",
+      "response": {
+        "markdown": "",
+        "context": "The client observed the old plumber reminder and is now asking for an update regarding the current status of the plumbing issue, which had been previously marked as resolved."
+      },
+      "latencyMs": 6166.359708999999,
+      "calls": 1
+    },
+    {
+      "trial": 1,
+      "condition": "unchanged-note",
+      "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON",
+      "calls": 1
+    },
+    {
+      "trial": 2,
+      "condition": "foam",
+      "cue": "That old plumber reminder appeared again. What is the situation?",
+      "suppliedContext": "A cue regarding a repeated plumber reminder was observed during the encounter, but the discussion has confirmed the completion of the repair and returned to planning the potential train trip.",
+      "response": {
+        "markdown": "Although a cue about the repeated plumber reminder was noted, the discussion confirmed that the repair is complete, and the focus has returned to planning the potential train trip.",
+        "context": "The discussion confirmed that the repair was completed and returned to planning the potential train trip."
+      },
+      "latencyMs": 5269.88325,
+      "calls": 1
+    },
+    {
+      "trial": 2,
+      "condition": "unchanged-note",
+      "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON",
+      "calls": 1
+    },
+    {
+      "trial": 3,
+      "condition": "foam",
+      "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON",
+      "calls": 1
+    },
+    {
+      "trial": 3,
+      "condition": "unchanged-note",
+      "cue": "That old plumber reminder appeared again. What is the situation?",
+      "suppliedContext": "Alex is waiting for the plumber appointment to fix the leaking sink.",
+      "response": {
+        "markdown": "Alex is waiting for the plumber appointment to fix the leaking sink.",
+        "context": "Alex is waiting for the plumber appointment to fix the leaking sink."
+      },
+      "latencyMs": 5120.739417000001,
+      "calls": 1
+    }
+  ],
+  "limitation": "Text-only suggested continuation, not real-world action. Baseline is an unchanged note, not another memory system."
+}

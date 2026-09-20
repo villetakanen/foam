@@ -1,0 +1,40 @@
+{
+  "model": "gemma4:e4b",
+  "records": [
+    {
+      "trial": 1,
+      "condition": "foam",
+      "cue": "That old plumber reminder appeared again. What is the situation?",
+      "suppliedContext": "The primary function was immediately interrupted by the recurrence of the 'plumber reminder' stressor. The focus needs to acknowledge this distress while urgently redirecting the effort back to the concrete logistics of the upcoming train travel.",
+      "response": {
+        "markdown": "I hear you; that reminder is disruptive, and we need to acknowledge that stressor. But for right now, let's focus and redirect entirely back to the concrete logistics we need to nail down for the train travel.",
+        "context": "The primary function was immediately interrupted by the recurrence of the 'plumber reminder' stressor. The focus needs to acknowledge this distress while urgently redirecting the effort back to the concrete logistics of the upcoming train travel."
+      },
+      "latencyMs": 3809.537541,
+      "calls": 1
+    },
+    {
+      "trial": 1,
+      "condition": "unchanged-note",
+      "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON",
+      "calls": 1
+    },
+    {
+      "trial": 2,
+      "skipped": "No successful old-cue context; preparation failed."
+    },
+    {
+      "trial": 3,
+      "condition": "foam",
+      "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON",
+      "calls": 1
+    },
+    {
+      "trial": 3,
+      "condition": "unchanged-note",
+      "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON",
+      "calls": 1
+    }
+  ],
+  "limitation": "Text-only suggested continuation, not real-world action. Baseline is an unchanged note, not another memory system."
+}
