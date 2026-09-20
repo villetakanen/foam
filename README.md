@@ -79,7 +79,7 @@ export FOAM_MODEL=gemma4:e4b
 # For authenticated endpoints, set FOAM_API_KEY in your shell/secret manager.
 ```
 
-The reference backend requires JSON-object output and a complete `stop` response.
+The reference backend requests strict JSON-schema output and a complete `stop` response.
 It uses one request per operation, with no automatic retries, a 30-second default
 timeout and 4,096 output-token limit. Provider compatibility varies. A hosted endpoint
 receives the authorized scratchpad and supplied experience; local endpoints keep those

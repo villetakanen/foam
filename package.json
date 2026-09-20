@@ -45,7 +45,8 @@
     "demo": "node --import tsx examples/demo.ts",
     "demo:graph": "node --import tsx examples/langgraph.ts",
     "eval:live": "node --import tsx examples/evaluate.ts",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "eval:client": "node --import tsx examples/evaluate-client.ts"
   },
   "devDependencies": {
     "@earendil-works/pi-coding-agent": "0.86.0",

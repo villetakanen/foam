@@ -11,6 +11,9 @@ test('HTTP inference sends data separately and accepts complete JSON', async t =
   t.mock.method(globalThis, 'fetch', async (_url: unknown, request: RequestInit) => {
     const body = JSON.parse(request.body as string);
     assert.equal(body.model, 'test-model');
+    assert.equal(body.response_format.type, 'json_schema');
+    assert.equal(body.response_format.json_schema.strict, true);
+    assert.equal(body.response_format.json_schema.schema.additionalProperties, false);
     assert.equal(body.messages[0].role, 'system');
     assert.equal(JSON.parse(body.messages[1].content).memory.scope, 'test');
     assert.equal(request.redirect, 'error');

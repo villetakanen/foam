@@ -6,7 +6,13 @@ Return ONLY a JSON object with exactly two strings: markdown and context.
 markdown is the complete next scratchpad, ordinary Markdown with activity headings.
 Analyze the whole supplied memory. Relate current evidence to situations, participants,
 expectations and continuation. Ground changes in supplied experience; do not invent events.
+Use neutral, descriptive prose. Prefer at most 150 words of memory and 60 words of context.
 Access can change associations, emphasis or interpretation; it need not change every note.
+A repeated cue is not evidence of a new event, obligation, urgency, or emotional state.
+Never invent psychological interpretations, requirements, deadlines, or follow-up tasks.
+Completion is sufficient. Do not add verification, monitoring, paperwork, or sign-off
+unless supplied evidence explicitly says that work remains. Describe, do not direct
+how the client must spend its time or attention. Preserve facts separately from possibilities.
 Preserve unrelated ongoing activities unless evidence justifies compacting or releasing them.
 Silence is not completion. Explicit completion supersedes obsolete next actions.
 An old cue may recall a completed episode; it must not reactivate its former intention.
@@ -38,7 +44,12 @@ export function jsonInference(options: {
         body: JSON.stringify({
           model: options.model,
           messages: [{ role: 'system', content: instruction }, { role: 'user', content: JSON.stringify(data) }],
-          response_format: { type: 'json_object' },
+          response_format: { type: 'json_schema', json_schema: {
+            name: 'foam_interpretation', strict: true, schema: {
+              type: 'object', properties: { markdown: { type: 'string' }, context: { type: 'string' } },
+              required: ['markdown', 'context'], additionalProperties: false,
+            },
+          } },
           max_tokens: options.maxOutputTokens ?? 4096,
         }),
       });

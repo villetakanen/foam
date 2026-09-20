@@ -38,6 +38,8 @@ checkpoint policy. Replaying historical state with a mismatched revision fails.
 - Empty scope initializes without cross-scope discovery; a differently labelled file fails.
 - Interrupt repair work with travel planning, then cue the repair: restore its situation.
 - Learn the repair is complete, then present an old cue: recall completion, avoid a stale action.
+- Completion must not create unsupported verification, monitoring, documentation, urgency,
+  or emotional interpretations. An old cue is not evidence of a new obligation.
 - Repeated access has unique occurrence metadata and may evolve memory.
 - Identical normalized experiences through both adapters have identical policy inputs.
 - Restart reads committed Markdown. Inspection leaves its revision unchanged.
