@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.tgz
+.env
+.env.*
+!.env.example
+.foam/
+coverage/
+# Local study collateral copied from a personal vault; never publish.
+docs/FOAM.md
+docs/Initial system hypothesis.md
+docs/0.1.0 scope.md
+docs/2026-09-20-*.md

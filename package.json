@@ -1,0 +1,65 @@
+{
+  "name": "@villetakanen/foam",
+  "version": "0.1.0",
+  "description": "Experimental evolving Markdown working memory for agents",
+  "type": "module",
+  "license": "MIT",
+  "author": "Ville Takanen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/villetakanen/foam.git"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./pi": {
+      "types": "./dist/adapters/pi.d.ts",
+      "default": "./dist/adapters/pi.js"
+    },
+    "./langgraph": {
+      "types": "./dist/adapters/langgraph.d.ts",
+      "default": "./dist/adapters/langgraph.js"
+    }
+  },
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./dist/adapters/pi.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run build && tsc -p tsconfig.check.json && npm test",
+    "demo": "node --import tsx examples/demo.ts",
+    "demo:graph": "node --import tsx examples/langgraph.ts",
+    "eval:live": "node --import tsx examples/evaluate.ts",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.86.0",
+    "@langchain/langgraph": "1.4.16",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "7.0.2"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "0.86.x"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    }
+  }
+}
