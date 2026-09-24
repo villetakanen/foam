@@ -1,6 +1,6 @@
 {
   "name": "@villetakanen/foam",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Experimental evolving Markdown working memory for agents",
   "type": "module",
   "license": "MIT",
@@ -30,8 +30,12 @@
     "dist",
     "examples",
     "README.md",
+    "VISION.md",
     "LICENSE",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "tests/fixtures/semantic-cases.json",
+    "tests/fixtures/large-memory.md",
+    "tests/fixtures/inference-0.1.ts.txt"
   ],
   "pi": {
     "extensions": [
@@ -46,7 +50,11 @@
     "demo:graph": "node --import tsx examples/langgraph.ts",
     "eval:live": "node --import tsx examples/evaluate.ts",
     "prepack": "npm run build",
-    "eval:client": "node --import tsx examples/evaluate-client.ts"
+    "eval:client": "node --import tsx examples/evaluate-client.ts",
+    "eval:semantic": "node --import tsx examples/evaluate-semantic.ts",
+    "demo:embedded": "node --import tsx examples/embedded.ts",
+    "eval:semantic:legacy": "node --import tsx examples/evaluate-semantic-legacy.ts",
+    "eval:activity": "node --import tsx examples/evaluate-activity.ts"
   },
   "devDependencies": {
     "@earendil-works/pi-coding-agent": "0.86.0",
@@ -62,5 +70,8 @@
     "@earendil-works/pi-coding-agent": {
       "optional": true
     }
+  },
+  "bin": {
+    "foam": "./dist/cli.js"
   }
 }

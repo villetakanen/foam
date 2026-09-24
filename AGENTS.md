@@ -1,6 +1,8 @@
 # FOAM
 
-FOAM explores evolving working memory, especially stale relevance after completion.
+FOAM explores fleeting, partial recollection that adds contextual awareness.
+Useful associations and focused clarification count; complete task-state reconstruction
+is not the goal. Read `VISION.md` and `specs/memory/spec.md` before changing policy or evals.
 Preserve the distinction between biological evidence and engineering hypotheses.
 
 - Use `npm run check` and both demos before release. Behaviour changes update

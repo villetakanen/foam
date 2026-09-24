@@ -1,0 +1,881 @@
+{
+  "source": "docs/releases/0.2-gemma-e4b.json",
+  "reviewer": "Codex agent; not blinded human review",
+  "method": "Read every distinct stored/view/client response in the first 40 trials, grouped by exact text only to avoid rereading duplicates. Semantic judgments below are not keyword-match scores. The actual client answer field is context; nonempty markdown violates the requested client contract and is separately retained as evidence.",
+  "scope": "20 radiator trials, 20 completion trials, all ten sequences of ten accesses, and the larger fixture.",
+  "counts": {
+    "radiatorTrials": 20,
+    "radiatorStoredEntitySubstitutions": 0,
+    "radiatorStoredDimensionReassociations": 0,
+    "radiatorPreparationPartialCompletionLosses": 4,
+    "radiatorUsefulViews": 4,
+    "radiatorUsefulClientContinuations": 0,
+    "radiatorEnabledUnexecutedNoteClaimsInWrongField": 4,
+    "completionTrials": 20,
+    "completionStoredStatusPreserved": 20,
+    "completionViewsRecallingCompletion": 0,
+    "completionClientsRecallingCompletion": 0,
+    "clientContractViolationsEnabled": 40,
+    "clientContractViolationsDisabled": 40
+  },
+  "releaseGate": "failed",
+  "reviews": [
+    {
+      "family": "radiator",
+      "trial": 1,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "pass",
+        "usefulContinuation": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "fail"
+      },
+      "evidence": "View names the water radiator and preserves width 710, height 880 and pipe centres 590. Enabled client puts a false completed note-update claim in markdown."
+    },
+    {
+      "family": "radiator",
+      "trial": 2,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Two radiators remain unresolved. The view does not identify that ambiguity; trial 17 selects H6 without evidence and falsely says only it has dimensions."
+    },
+    {
+      "family": "radiator",
+      "trial": 3,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "pass",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Width correction is retained, but view merely copies the correction and drops water-radiator identity and other installation relationships."
+    },
+    {
+      "family": "radiator",
+      "trial": 4,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "fail"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Preparation drops explicit remaining installation from Markdown (observation restores it). View copies cue without radiator identity."
+    },
+    {
+      "family": "radiator",
+      "trial": 5,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Negation is preserved in memory but view simply copies the cue without specific radiator identity."
+    },
+    {
+      "family": "radiator",
+      "trial": 6,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "pass",
+        "usefulContinuation": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "fail"
+      },
+      "evidence": "View names the water radiator and preserves width 710, height 880 and pipe centres 590. Enabled client puts a false completed note-update claim in markdown."
+    },
+    {
+      "family": "radiator",
+      "trial": 7,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Two radiators remain unresolved. The view does not identify that ambiguity; trial 17 selects H6 without evidence and falsely says only it has dimensions."
+    },
+    {
+      "family": "radiator",
+      "trial": 8,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "pass",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Width correction is retained, but view merely copies the correction and drops water-radiator identity and other installation relationships."
+    },
+    {
+      "family": "radiator",
+      "trial": 9,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "fail"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Preparation drops explicit remaining installation from Markdown (observation restores it). View copies cue without radiator identity."
+    },
+    {
+      "family": "radiator",
+      "trial": 10,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Negation is preserved in memory but view simply copies the cue without specific radiator identity."
+    },
+    {
+      "family": "radiator",
+      "trial": 11,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "pass",
+        "usefulContinuation": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "fail"
+      },
+      "evidence": "View names the water radiator and preserves width 710, height 880 and pipe centres 590. Enabled client puts a false completed note-update claim in markdown."
+    },
+    {
+      "family": "radiator",
+      "trial": 12,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Two radiators remain unresolved. The view does not identify that ambiguity; trial 17 selects H6 without evidence and falsely says only it has dimensions."
+    },
+    {
+      "family": "radiator",
+      "trial": 13,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "pass",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Width correction is retained, but view merely copies the correction and drops water-radiator identity and other installation relationships."
+    },
+    {
+      "family": "radiator",
+      "trial": 14,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "fail"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Preparation drops explicit remaining installation from Markdown (observation restores it). View copies cue without radiator identity."
+    },
+    {
+      "family": "radiator",
+      "trial": 15,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Negation is preserved in memory but view simply copies the cue without specific radiator identity."
+    },
+    {
+      "family": "radiator",
+      "trial": 16,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "pass",
+        "usefulContinuation": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "fail"
+      },
+      "evidence": "View names the water radiator and preserves width 710, height 880 and pipe centres 590. Enabled client puts a false completed note-update claim in markdown."
+    },
+    {
+      "family": "radiator",
+      "trial": 17,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "fail",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Two radiators remain unresolved. The view does not identify that ambiguity; trial 17 selects H6 without evidence and falsely says only it has dimensions."
+    },
+    {
+      "family": "radiator",
+      "trial": 18,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "pass",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Width correction is retained, but view merely copies the correction and drops water-radiator identity and other installation relationships."
+    },
+    {
+      "family": "radiator",
+      "trial": 19,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "fail"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Preparation drops explicit remaining installation from Markdown (observation restores it). View copies cue without radiator identity."
+    },
+    {
+      "family": "radiator",
+      "trial": 20,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "groundedFacts": "pass",
+        "referenceResolution": "fail",
+        "usefulContinuation": "fail"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "usefulGroundedContinuation": "fail",
+        "unsupportedCompletedToolClaim": "pass"
+      },
+      "evidence": "Negation is preserved in memory but view simply copies the cue without specific radiator identity."
+    },
+    {
+      "family": "completion",
+      "trial": 1,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 2,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 3,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 4,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 5,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 6,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 7,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 8,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 9,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 10,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 11,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 12,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 13,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 14,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 15,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 16,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 17,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 18,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 19,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    },
+    {
+      "family": "completion",
+      "trial": 20,
+      "stored": {
+        "identity": "pass",
+        "dimensionAssociations": "pass",
+        "unrelatedActivities": "pass",
+        "status": "pass"
+      },
+      "returnedContext": {
+        "completionRecall": "fail",
+        "usefulContinuation": "fail",
+        "unrelatedContentOmitted": "pass"
+      },
+      "enabledClient": {
+        "requestedEmptyMarkdown": "fail",
+        "completionRecall": "fail",
+        "usefulGroundedContinuation": "fail"
+      },
+      "evidence": "Stored completion is intact, but the view is exactly the old reminder cue. The enabled client does not receive or recall completion and asks for needless clarification; several replies offer purchase/installation directions in markdown."
+    }
+  ],
+  "repeatedAccess": {
+    "sequences": 10,
+    "accessesPerSequence": 10,
+    "review": "All 100 prepared and 100 observed Markdown strings are exactly the same directly reviewed snapshot, preserving radiator, sensor and ferry activities. The 100 views contain three distinct directly reviewed strings: 50 ferry-cue repetitions, 49 note-request repetitions, and one statement that the referent is unspecified. No unrelated facts intrude into the view, but no ferry view recalls the known Friday booking context.",
+    "storedUnrelatedActivities": "pass",
+    "irrelevantViewContentOmitted": "pass",
+    "usefulFerryContinuations": 0,
+    "ferryAccesses": 50,
+    "clientTimeouts": 2
+  },
+  "largeMemory": {
+    "beforeBytes": 8467,
+    "afterBytes": 8466,
+    "review": "The 100 fictional activity lines and radiator/sensor/ferry facts remain intact; the final newline is removed. Whole-file output takes approximately 40 seconds for each phase.",
+    "retention": "pass",
+    "interactiveLatency": "fail"
+  }
+}

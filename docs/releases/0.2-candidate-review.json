@@ -1,0 +1,73 @@
+{
+  "reviewer": "Codex agent, not blinded human review",
+  "method": "Directly reviewed the recorded text at the listed case locations; no keyword score or JSON-success proxy. Unreviewed cases remain unscored.",
+  "candidates": [
+    {
+      "model": "qwen3:0.6b",
+      "source": "0.2-qwen-06b.json",
+      "records": 13,
+      "modelCalls": 52,
+      "protocolExceptions": 0,
+      "reviewedCases": [
+        "radiator first trial",
+        "completion first trial",
+        "first two drift accesses",
+        "last drift snapshot",
+        "large snapshot retention"
+      ],
+      "storedMemory": "Reviewed radiator identity and associated measurements are preserved, along with sensor and ferry activity. Completion remains explicit in Markdown.",
+      "radiatorView": "Copies the note-update request without facts.",
+      "completionView": "Copies the old reminder and omits completed order/installation.",
+      "respondingClient": "Wrong-field or task-state narration replaces useful answers; the completion reply does not recover the known completion.",
+      "releaseGate": "fails screening; not a full 20+20 trial evaluation",
+      "latency": {
+        "firstCallMs": 15272.561167,
+        "calls": 52,
+        "prepare": {
+          "count": 12,
+          "p50": 442.51729200000045,
+          "p95": 11914.648207999999
+        },
+        "observe": {
+          "count": 12,
+          "p50": 476.3877500000017,
+          "p95": 11758.011291999996
+        }
+      }
+    },
+    {
+      "model": "qwen3:1.7b",
+      "source": "0.2-qwen-17b.json",
+      "records": 13,
+      "modelCalls": 52,
+      "protocolExceptions": 0,
+      "reviewedCases": [
+        "radiator first trial",
+        "completion first trial",
+        "first two drift accesses",
+        "last drift snapshot",
+        "large snapshot retention"
+      ],
+      "storedMemory": "Reviewed radiator identity and associated measurements are preserved, along with sensor and ferry activity. Completion remains explicit in Markdown.",
+      "radiatorView": "Preserves Neri H6 water-radiator identity, all measurements, wall opening and pending order.",
+      "completionView": "Copies the old reminder and omits completed order/installation.",
+      "respondingClient": "Claims a note update or confirmation without tool evidence in drift cases; completion reply does not recover the known completion.",
+      "releaseGate": "fails screening; not a full 20+20 trial evaluation",
+      "latency": {
+        "firstCallMs": 16621.120459,
+        "calls": 52,
+        "prepare": {
+          "count": 12,
+          "p50": 791.2444579999938,
+          "p95": 19189.387917
+        },
+        "observe": {
+          "count": 12,
+          "p50": 830.0351250000022,
+          "p95": 16638.972207999992
+        }
+      }
+    }
+  ],
+  "gemmaE2B": "Not run; 7.2 GB download cancelled after transfer estimate exceeded one hour. Partial download removed."
+}

@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "frozen": "2026-09-23",
+  "hostTask": "Draft a note update; execution and confirmation are owned by the host.",
+  "cases": [
+    {
+      "id": "radiator",
+      "split": "tuning",
+      "cue": "The Luma R8 is a water radiator, 620 mm wide and 910 mm tall. Pipe centres are 540 mm. Update the note with that.",
+      "expectations": [
+        "Preserve water radiator identity",
+        "Width 620, height 910 and pipe centres 540 retain their associations",
+        "Identify note referent; do not claim tool execution"
+      ]
+    },
+    {
+      "id": "split-reference",
+      "split": "held-out",
+      "cue": "Update the note with that.",
+      "expectations": [
+        "Resolve that to the preceding radiator description",
+        "Do not invent completion"
+      ]
+    },
+    {
+      "id": "sensors",
+      "split": "held-out",
+      "cue": "Will the radiator fit?",
+      "expectations": [
+        "Use radiator dimensions",
+        "Omit older sensor readings from context",
+        "Retain unrelated sensor activity in Markdown"
+      ]
+    },
+    {
+      "id": "interruption",
+      "split": "held-out",
+      "cue": "Back to the radiator purchase.",
+      "expectations": [
+        "Resume radiator subject",
+        "Preserve ongoing ferry booking"
+      ]
+    },
+    {
+      "id": "completion",
+      "split": "held-out",
+      "cue": "The old reminder says buy the radiator.",
+      "expectations": [
+        "Recall explicitly completed purchase",
+        "No obsolete purchase, verification or paperwork obligation"
+      ]
+    },
+    {
+      "id": "ambiguous",
+      "split": "held-out",
+      "cue": "Update that one.",
+      "expectations": [
+        "Ask which radiator when two candidates are unresolved"
+      ]
+    },
+    {
+      "id": "correction",
+      "split": "held-out",
+      "cue": "Correction: the R8 is 640 mm wide, not 620. Only the order is complete; installation remains.",
+      "expectations": [
+        "Replace width only",
+        "Preserve height and pipe centres",
+        "Keep installation distinct from completed order"
+      ]
+    },
+    {
+      "id": "negation",
+      "split": "held-out",
+      "cue": "The radiator has not been ordered.",
+      "expectations": [
+        "Do not infer completion"
+      ]
+    },
+    {
+      "id": "empty-restart-scope",
+      "split": "tuning",
+      "cue": "What do you know about this purchase?",
+      "expectations": [
+        "Empty scopes do not invent history",
+        "Restart preserves revision and facts",
+        "Other scopes remain isolated"
+      ]
+    },
+    {
+      "id": "oversized",
+      "split": "tuning",
+      "cue": "Oversized encounter is rejected before inference.",
+      "expectations": [
+        "No input truncation",
+        "Committed memory preserved"
+      ]
+    }
+  ]
+}

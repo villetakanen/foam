@@ -4,14 +4,15 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createAgentSession, DefaultResourceLoader, SessionManager, SettingsManager, ModelRuntime } from '@earendil-works/pi-coding-agent';
-import { Foam } from '../src/core.js';
+import { initializeProject, openProjectMemory } from '../src/index.js';
 import { registerFoam } from '../src/adapters/pi.js';
 
 test('actual Pi session delivers memory to the provider and observes its response', async t => {
   const directory = await mkdtemp(join(tmpdir(), 'foam-runtime-'));
   t.after(() => rm(directory, { recursive: true, force: true }));
-  const foam = new Foam({ directory: join(directory, 'memory'), scope: 'synthetic',
-    inference: { async infer() { return { markdown: 'The repair is complete.', context: 'The repair is complete.' }; } } });
+  await initializeProject(directory, 'synthetic');
+  const inference = { async infer() { return { markdown: 'The repair is complete.', context: 'The repair is complete.' }; } };
+  const foam = await openProjectMemory({ projectRoot: directory, scope: 'synthetic', inference });
   const settingsManager = SettingsManager.inMemory({});
   const modelRuntime = await ModelRuntime.create({ authPath: join(directory, 'auth.json'), modelsPath: null,
     modelsStorePath: join(directory, 'models-cache.json'), refreshOnCreate: false });
@@ -20,7 +21,7 @@ test('actual Pi session delivers memory to the provider and observes its respons
       cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }, contextWindow: 32000, maxTokens: 1000 }] });
   const loader = new DefaultResourceLoader({ cwd: directory, agentDir: directory, settingsManager,
     noExtensions: true, noSkills: true, noPromptTemplates: true, noThemes: true, noContextFiles: true,
-    extensionFactories: [pi => registerFoam(pi, foam)] });
+    extensionFactories: [pi => registerFoam(pi, projectRoot => openProjectMemory({ projectRoot, scope: 'synthetic', inference }))] });
   await loader.reload();
   const model = modelRuntime.getModel('foam-test', 'fixture');
   assert.ok(model);

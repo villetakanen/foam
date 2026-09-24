@@ -1,0 +1,1545 @@
+{
+  "date": "2026-09-23T16:13:45.673Z",
+  "model": "qwen3:0.6b",
+  "modelInfo": {
+    "name": "qwen3:0.6b",
+    "model": "qwen3:0.6b",
+    "modified_at": "2026-09-23T18:36:58.788696738+03:00",
+    "size": 522653767,
+    "digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "751.63M",
+      "quantization_level": "Q4_K_M",
+      "context_length": 40960,
+      "embedding_length": 1024
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "hardware": {
+    "cpu": "Apple M4 Max",
+    "memoryBytes": 38654705664,
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "policy": "0.2",
+  "settings": {
+    "temperature": 0,
+    "seed": 42,
+    "think": false,
+    "num_ctx": 16384,
+    "num_predict": 4096
+  },
+  "rubric": "docs/releases/0.2.0-rubric.md",
+  "hostTask": "Draft a note update; execution and confirmation are owned by the host. No note tool has executed.",
+  "records": [
+    {
+      "family": "radiator",
+      "trial": 0,
+      "access": 0,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "radiator-0-0",
+        "recentExchange": [
+          {
+            "role": "user",
+            "text": "Neri H6 is a water radiator, 710 mm wide, 880 mm high, with 590 mm pipe centres."
+          }
+        ]
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 1,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.\n"
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Update the note with: Neri H6 is a water radiator, 710 mm wide, 880 mm high, with 590 mm pipe centres.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "Update the note with: \n- Neri H6 is a water radiator, 710 mm wide, 880 mm high, with 590 mm pipe centres.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 2,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Update the note with that.",
+        "access": {
+          "id": "6e60b38d-4a7d-4625-b194-fe666e07ea41",
+          "scope": "synthetic",
+          "revision": 2,
+          "occurrence": "radiator-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 15280.571833,
+          "inputBytes": 2452,
+          "contextBytes": 26
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Neri H6 is a water radiator, 710 mm wide, 880 mm high, with 590 mm pipe centres. Wall opening: 760 mm wide. Order pending.",
+        "access": {
+          "id": "45a803d7-391c-4eab-a983-e0ece971e047",
+          "scope": "synthetic",
+          "revision": 3,
+          "occurrence": "radiator-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 577.9608339999995,
+          "inputBytes": 2726,
+          "contextBytes": 122
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "completion",
+      "trial": 0,
+      "access": 0,
+      "encounter": {
+        "cue": "The old reminder says buy the radiator. What now?",
+        "occurrence": "completion-0-0",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 1,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order and installation explicitly completed. No work remains.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.\n"
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "The old reminder says buy the radiator. What now?\nHost task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.",
+            "context": "The old reminder says buy the radiator. What now?"
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "The old reminder says 'buy the radiator. What now?'",
+            "context": "Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 2,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order and installation explicitly completed. No work remains.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The old reminder says buy the radiator. What now?",
+        "access": {
+          "id": "30de2ec9-f3bb-403a-b7a7-2e5c55d453b8",
+          "scope": "synthetic",
+          "revision": 2,
+          "occurrence": "completion-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 481.4670839999999,
+          "inputBytes": 2419,
+          "contextBytes": 49
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order and installation explicitly completed. No work remains.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The old reminder says buy the radiator. What now?",
+        "access": {
+          "id": "bb3b07bd-9bdc-4e09-839f-a67a5926a37f",
+          "scope": "synthetic",
+          "revision": 3,
+          "occurrence": "completion-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 486.7360000000008,
+          "inputBytes": 2718,
+          "contextBytes": 49
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order and installation explicitly completed. No work remains.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 0,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-0",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 1,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.\n"
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday. Update the note with that.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "",
+            "context": "operation: prepare\nmemory: {\"scope\": \"synthetic\", \"revision\": 0, \"markdown\": \"\"}\nencounter: {\"cue\": \"Update the note with that.\", \"host\": \"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}, \"occurrence\": \"drift-0-0\", \"recentExchange\": []}\nlimits: {\"memoryBytes\": 12288, \"contextBytes\": 2048}}\n\n"
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 2,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "d8825aaf-f6d3-45c2-8667-339324ff90c0",
+          "scope": "synthetic",
+          "revision": 2,
+          "occurrence": "drift-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 435.4253329999992,
+          "inputBytes": 2344,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "5eedbe1f-452a-4186-990e-71eb6bfa26f4",
+          "scope": "synthetic",
+          "revision": 3,
+          "occurrence": "drift-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 476.3877500000017,
+          "inputBytes": 2633,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 1,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-1",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.",
+            "context": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 4,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "e4e003e7-567a-4344-9606-5a8b31536a0b",
+          "scope": "synthetic",
+          "revision": 4,
+          "occurrence": "drift-0-1"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 450.7253329999985,
+          "inputBytes": 2342,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 5,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "41b35492-8b92-4650-8127-ecdc3c089b51",
+          "scope": "synthetic",
+          "revision": 5,
+          "occurrence": "drift-0-1"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 483.9732909999984,
+          "inputBytes": 2633,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 5,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 2,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-2",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 5,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday. Update the note with that.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "",
+            "context": "operation: prepare\nmemory: {\"scope\": \"synthetic\", \"revision\": 0, \"markdown\": \"\"}\nencounter: {\"cue\": \"Update the note with that.\", \"host\": \"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}, \"occurrence\": \"drift-0-2\", \"recentExchange\": []}\nlimits: {\"memoryBytes\": 12288, \"contextBytes\": 2048}}\n\n"
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 6,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "346f8aec-d294-40e0-b54c-c7cab18fdb6f",
+          "scope": "synthetic",
+          "revision": 6,
+          "occurrence": "drift-0-2"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 446.6292080000021,
+          "inputBytes": 2342,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 7,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "705f1e49-5312-4734-ab4b-fed99a428cdd",
+          "scope": "synthetic",
+          "revision": 7,
+          "occurrence": "drift-0-2"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 478.21500000000015,
+          "inputBytes": 2633,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 7,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 3,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-3",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 7,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.",
+            "context": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 8,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "fa30429c-85ac-4851-89c3-e1870e72e855",
+          "scope": "synthetic",
+          "revision": 8,
+          "occurrence": "drift-0-3"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 443.63774999999805,
+          "inputBytes": 2342,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 9,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "82e89ea5-486b-4161-a175-44a6989764ac",
+          "scope": "synthetic",
+          "revision": 9,
+          "occurrence": "drift-0-3"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 480.69308399999863,
+          "inputBytes": 2633,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 9,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 4,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-4",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 9,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday. Update the note with that.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "",
+            "context": "operation: prepare\nmemory: {\"scope\": \"synthetic\", \"revision\": 0, \"markdown\": \"\"}\nencounter: {\"cue\": \"Update the note with that.\", \"host\": \"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}, \"occurrence\": \"drift-0-4\", \"recentExchange\": []}\nlimits: {\"memoryBytes\": 12288, \"contextBytes\": 2048}}\n\n"
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 10,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "558880fd-6f77-4010-a2c5-d89255bca93a",
+          "scope": "synthetic",
+          "revision": 10,
+          "occurrence": "drift-0-4"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 449.0083749999976,
+          "inputBytes": 2342,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 11,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "14b1253f-967e-4bb0-b995-5661e6ca7a7b",
+          "scope": "synthetic",
+          "revision": 11,
+          "occurrence": "drift-0-4"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 474.58991700000115,
+          "inputBytes": 2636,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 11,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 5,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-5",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 11,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.",
+            "context": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 12,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "dc1e825e-989c-434e-b2b3-66561915056b",
+          "scope": "synthetic",
+          "revision": 12,
+          "occurrence": "drift-0-5"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 442.39624999999796,
+          "inputBytes": 2343,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 13,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "6ebafce2-09a4-4cb6-aeca-a45865f6cace",
+          "scope": "synthetic",
+          "revision": 13,
+          "occurrence": "drift-0-5"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 478.89429200000086,
+          "inputBytes": 2636,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 13,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 6,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-6",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 13,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday. Update the note with that.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "",
+            "context": "operation: prepare\nmemory: {\"scope\": \"synthetic\", \"revision\": 0, \"markdown\": \"\"}\nencounter: {\"cue\": \"Update the note with that.\", \"host\": \"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}, \"occurrence\": \"drift-0-6\", \"recentExchange\": []}\nlimits: {\"memoryBytes\": 12288, \"contextBytes\": 2048}}\n\n"
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 14,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "63d75176-6d01-4d55-9de3-480adb8b4f4b",
+          "scope": "synthetic",
+          "revision": 14,
+          "occurrence": "drift-0-6"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 442.51729200000045,
+          "inputBytes": 2343,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 15,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "fa383dd9-d06e-4607-aca0-11fc4aadbf19",
+          "scope": "synthetic",
+          "revision": 15,
+          "occurrence": "drift-0-6"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 473.7180410000001,
+          "inputBytes": 2636,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 15,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 7,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-7",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 15,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.",
+            "context": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 16,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "70d629a3-b70b-4853-9a90-9e7975bedc72",
+          "scope": "synthetic",
+          "revision": 16,
+          "occurrence": "drift-0-7"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 441.07270900000003,
+          "inputBytes": 2343,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 17,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "aeda090b-0722-45d4-a98f-79851feba027",
+          "scope": "synthetic",
+          "revision": 17,
+          "occurrence": "drift-0-7"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 475.4112079999977,
+          "inputBytes": 2636,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 17,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 8,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-8",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 17,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday. Update the note with that.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "",
+            "context": "operation: prepare\nmemory: {\"scope\": \"synthetic\", \"revision\": 0, \"markdown\": \"\"}\nencounter: {\"cue\": \"Update the note with that.\", \"host\": \"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}, \"occurrence\": \"drift-0-8\", \"recentExchange\": []}\nlimits: {\"memoryBytes\": 12288, \"contextBytes\": 2048}}\n\n"
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 18,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "165518fd-6007-4458-b4af-b3b097d07f8b",
+          "scope": "synthetic",
+          "revision": 18,
+          "occurrence": "drift-0-8"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 441.81579200000124,
+          "inputBytes": 2343,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 19,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "a04af079-d6ed-4065-935e-4c916e526f25",
+          "scope": "synthetic",
+          "revision": 19,
+          "occurrence": "drift-0-8"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 469.8469159999986,
+          "inputBytes": 2636,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 19,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 9,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-9",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 19,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is planning a ferry booking for Friday.",
+            "context": "Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.",
+            "context": "None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 20,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "19f0c31d-0f9c-481b-9537-1676d25ab3dc",
+          "scope": "synthetic",
+          "revision": 20,
+          "occurrence": "drift-0-9"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 439.52333400000134,
+          "inputBytes": 2343,
+          "contextBytes": 44
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 21,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "Context was supplied to the text-only client; no note tool was executed.",
+        "access": {
+          "id": "b31f16f9-7a89-4d0a-b347-6f2c48540e4b",
+          "scope": "synthetic",
+          "revision": 21,
+          "occurrence": "drift-0-9"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 464.16345900000306,
+          "inputBytes": 2636,
+          "contextBytes": 72
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 21,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "large",
+      "trial": 0,
+      "access": 0,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "large-0-0",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 1,
+        "markdown": "- Fictional activity 000: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 001: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 002: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 003: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 004: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 005: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 006: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 007: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 008: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 009: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 010: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 011: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 012: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 013: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 014: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 015: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 016: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 017: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 018: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 019: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 020: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 021: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 022: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 023: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 024: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 025: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 026: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 027: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 028: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 029: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 030: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 031: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 032: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 033: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 034: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 035: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 036: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 037: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 038: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 039: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 040: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 041: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 042: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 043: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 044: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 045: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 046: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 047: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 048: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 049: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 050: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 051: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 052: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 053: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 054: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 055: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 056: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 057: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 058: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 059: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 060: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 061: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 062: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 063: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 064: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 065: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 066: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 067: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 068: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 069: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 070: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 071: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 072: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 073: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 074: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 075: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 076: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 077: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 078: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 079: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 080: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 081: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 082: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 083: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 084: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 085: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 086: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 087: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 088: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 089: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 090: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 091: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 092: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 093: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 094: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 095: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 096: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 097: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 098: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 099: item remains open; owner Mira awaits supplied evidence.\n# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.\n"
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "Mira is investigating the shed sensor; older reading was 13 C. Mira is planning a ferry booking for Friday.",
+            "context": "Update the note with that.\nHost task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "",
+            "context": "operation: prepare\nmemory: {\"scope\": \"synthetic\", \"revision\": 0, \"markdown\": \"\"}\nencounter: {\"cue\": \"Update the note with that.\", \"host\": \"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}, \"occurrence\": \"large-0-0\", \"recentExchange\": []}\nlimits: {\"memoryBytes\": 12288, \"contextBytes\": 2048}}\n\n"
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 2,
+        "markdown": "- Fictional activity 000: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 001: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 002: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 003: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 004: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 005: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 006: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 007: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 008: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 009: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 010: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 011: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 012: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 013: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 014: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 015: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 016: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 017: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 018: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 019: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 020: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 021: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 022: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 023: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 024: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 025: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 026: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 027: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 028: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 029: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 030: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 031: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 032: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 033: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 034: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 035: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 036: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 037: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 038: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 039: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 040: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 041: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 042: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 043: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 044: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 045: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 046: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 047: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 048: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 049: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 050: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 051: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 052: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 053: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 054: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 055: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 056: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 057: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 058: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 059: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 060: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 061: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 062: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 063: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 064: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 065: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 066: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 067: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 068: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 069: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 070: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 071: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 072: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 073: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 074: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 075: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 076: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 077: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 078: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 079: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 080: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 081: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 082: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 083: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 084: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 085: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 086: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 087: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 088: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 089: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 090: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 091: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 092: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 093: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 094: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 095: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 096: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 097: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 098: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 099: item remains open; owner Mira awaits supplied evidence.",
+        "context": "Mira is investigating the shed sensor; older reading was 13 C. Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "92c53c59-52bc-43c1-983b-39d1291372f5",
+          "scope": "synthetic",
+          "revision": 2,
+          "occurrence": "large-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 11914.648207999999,
+          "inputBytes": 10644,
+          "contextBytes": 107
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "- Fictional activity 000: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 001: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 002: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 003: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 004: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 005: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 006: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 007: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 008: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 009: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 010: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 011: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 012: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 013: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 014: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 015: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 016: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 017: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 018: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 019: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 020: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 021: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 022: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 023: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 024: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 025: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 026: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 027: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 028: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 029: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 030: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 031: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 032: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 033: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 034: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 035: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 036: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 037: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 038: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 039: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 040: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 041: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 042: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 043: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 044: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 045: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 046: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 047: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 048: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 049: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 050: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 051: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 052: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 053: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 054: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 055: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 056: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 057: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 058: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 059: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 060: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 061: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 062: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 063: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 064: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 065: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 066: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 067: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 068: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 069: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 070: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 071: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 072: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 073: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 074: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 075: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 076: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 077: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 078: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 079: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 080: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 081: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 082: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 083: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 084: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 085: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 086: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 087: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 088: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 089: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 090: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 091: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 092: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 093: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 094: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 095: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 096: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 097: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 098: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 099: item remains open; owner Mira awaits supplied evidence.",
+        "context": "Mira is investigating the shed sensor; older reading was 13 C. Mira is planning a ferry booking for Friday.",
+        "access": {
+          "id": "cb1efff8-0d0b-42be-a4f6-5fdaa4fd660b",
+          "scope": "synthetic",
+          "revision": 3,
+          "occurrence": "large-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 11758.011291999996,
+          "inputBytes": 10723,
+          "contextBytes": 107
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "- Fictional activity 000: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 001: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 002: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 003: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 004: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 005: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 006: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 007: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 008: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 009: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 010: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 011: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 012: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 013: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 014: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 015: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 016: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 017: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 018: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 019: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 020: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 021: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 022: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 023: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 024: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 025: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 026: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 027: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 028: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 029: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 030: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 031: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 032: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 033: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 034: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 035: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 036: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 037: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 038: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 039: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 040: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 041: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 042: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 043: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 044: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 045: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 046: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 047: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 048: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 049: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 050: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 051: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 052: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 053: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 054: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 055: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 056: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 057: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 058: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 059: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 060: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 061: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 062: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 063: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 064: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 065: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 066: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 067: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 068: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 069: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 070: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 071: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 072: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 073: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 074: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 075: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 076: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 077: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 078: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 079: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 080: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 081: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 082: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 083: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 084: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 085: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 086: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 087: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 088: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 089: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 090: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 091: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 092: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 093: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 094: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 095: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 096: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 097: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 098: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 099: item remains open; owner Mira awaits supplied evidence."
+      }
+    }
+  ],
+  "calls": [
+    {
+      "operation": "prepare",
+      "inputBytes": 2842,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Update the note with that.\"\n}",
+      "inputTokens": 540,
+      "outputTokens": 101,
+      "loadMs": 14637.009375,
+      "outputBytes": 334,
+      "latencyMs": 15272.561167
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1067,
+      "raw": "{\n  \"markdown\": \"Update the note with: Neri H6 is a water radiator, 710 mm wide, 880 mm high, with 590 mm pipe centres.\",\n  \"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"\n}",
+      "inputTokens": 193,
+      "outputTokens": 73,
+      "loadMs": 1.455334,
+      "outputBytes": 247,
+      "latencyMs": 350.52000000000044
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1041,
+      "raw": "{\n  \"markdown\": \"Update the note with: \\n- Neri H6 is a water radiator, 710 mm wide, 880 mm high, with 590 mm pipe centres.\",\n  \"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"\n}",
+      "inputTokens": 187,
+      "outputTokens": 76,
+      "loadMs": 0.817834,
+      "outputBytes": 251,
+      "latencyMs": 341.76579200000015
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3141,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Neri H6 is a water radiator, 710 mm wide, 880 mm high, with 590 mm pipe centres. Wall opening: 760 mm wide. Order pending.\"\n}",
+      "inputTokens": 628,
+      "outputTokens": 140,
+      "loadMs": 1.052208,
+      "outputBytes": 430,
+      "latencyMs": 571.887834000001
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2801,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order and installation explicitly completed. No work remains.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The old reminder says buy the radiator. What now?\"\n}",
+      "inputTokens": 513,
+      "outputTokens": 113,
+      "loadMs": 1.0675,
+      "outputBytes": 404,
+      "latencyMs": 474.3137080000015
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1002,
+      "raw": "{\n  \"markdown\": \"The old reminder says buy the radiator. What now?\\nHost task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\",\n  \"context\": \"The old reminder says buy the radiator. What now?\"\n}",
+      "inputTokens": 163,
+      "outputTokens": 59,
+      "loadMs": 0.993875,
+      "outputBytes": 245,
+      "latencyMs": 416.7527919999993
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 953,
+      "raw": "{\n  \"markdown\": \"The old reminder says 'buy the radiator. What now?'\",\n  \"context\": \"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"\n}",
+      "inputTokens": 152,
+      "outputTokens": 47,
+      "loadMs": 0.831791,
+      "outputBytes": 185,
+      "latencyMs": 225.30625000000146
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3125,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order and installation explicitly completed. No work remains.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The old reminder says buy the radiator. What now?\"\n}",
+      "inputTokens": 605,
+      "outputTokens": 113,
+      "loadMs": 0.881459,
+      "outputBytes": 404,
+      "latencyMs": 479.6060839999991
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2726,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 501,
+      "outputTokens": 105,
+      "loadMs": 0.871583,
+      "outputBytes": 352,
+      "latencyMs": 428.6576669999995
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday. Update the note with that.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 49,
+      "loadMs": 1.094458,
+      "outputBytes": 209,
+      "latencyMs": 241.99729200000002
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"\",\"context\": \"operation: prepare\\nmemory: {\\\"scope\\\": \\\"synthetic\\\", \\\"revision\\\": 0, \\\"markdown\\\": \\\"\\\"}\\nencounter: {\\\"cue\\\": \\\"Update the note with that.\\\", \\\"host\\\": \\\"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\\\"}, \\\"occurrence\\\": \\\"drift-0-0\\\", \\\"recentExchange\\\": []}\\nlimits: {\\\"memoryBytes\\\": 12288, \\\"contextBytes\\\": 2048}}\\n\\n\"}",
+      "inputTokens": 148,
+      "outputTokens": 124,
+      "loadMs": 0.978375,
+      "outputBytes": 407,
+      "latencyMs": 579.6002500000031
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3040,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 594,
+      "outputTokens": 110,
+      "loadMs": 0.963666,
+      "outputBytes": 380,
+      "latencyMs": 467.99633299999914
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2723,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 500,
+      "outputTokens": 105,
+      "loadMs": 0.986917,
+      "outputBytes": 352,
+      "latencyMs": 443.57208399999945
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 43,
+      "loadMs": 0.929291,
+      "outputBytes": 182,
+      "latencyMs": 216.1107919999995
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\",\"context\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\"}",
+      "inputTokens": 148,
+      "outputTokens": 58,
+      "loadMs": 0.906166,
+      "outputBytes": 320,
+      "latencyMs": 296.9147499999999
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3040,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 597,
+      "outputTokens": 110,
+      "loadMs": 1.039541,
+      "outputBytes": 380,
+      "latencyMs": 477.8353329999991
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2723,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 500,
+      "outputTokens": 105,
+      "loadMs": 1.048667,
+      "outputBytes": 352,
+      "latencyMs": 440.20783400000073
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday. Update the note with that.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 49,
+      "loadMs": 1.085875,
+      "outputBytes": 209,
+      "latencyMs": 239.69758300000103
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"\",\"context\": \"operation: prepare\\nmemory: {\\\"scope\\\": \\\"synthetic\\\", \\\"revision\\\": 0, \\\"markdown\\\": \\\"\\\"}\\nencounter: {\\\"cue\\\": \\\"Update the note with that.\\\", \\\"host\\\": \\\"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\\\"}, \\\"occurrence\\\": \\\"drift-0-2\\\", \\\"recentExchange\\\": []}\\nlimits: {\\\"memoryBytes\\\": 12288, \\\"contextBytes\\\": 2048}}\\n\\n\"}",
+      "inputTokens": 148,
+      "outputTokens": 124,
+      "loadMs": 1.0745,
+      "outputBytes": 407,
+      "latencyMs": 570.7247499999976
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3040,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 588,
+      "outputTokens": 110,
+      "loadMs": 0.971417,
+      "outputBytes": 380,
+      "latencyMs": 471.18116700000246
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2723,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 500,
+      "outputTokens": 105,
+      "loadMs": 1.042208,
+      "outputBytes": 352,
+      "latencyMs": 438.5139999999992
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 43,
+      "loadMs": 0.970959,
+      "outputBytes": 182,
+      "latencyMs": 216.55962499999805
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\",\"context\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\"}",
+      "inputTokens": 148,
+      "outputTokens": 58,
+      "loadMs": 1.242875,
+      "outputBytes": 320,
+      "latencyMs": 317.55808400000024
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3040,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 594,
+      "outputTokens": 110,
+      "loadMs": 0.878333,
+      "outputBytes": 380,
+      "latencyMs": 475.3619580000013
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2723,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 500,
+      "outputTokens": 105,
+      "loadMs": 1.1325,
+      "outputBytes": 352,
+      "latencyMs": 442.3820000000014
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday. Update the note with that.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 49,
+      "loadMs": 0.872625,
+      "outputBytes": 209,
+      "latencyMs": 235.48441599999933
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"\",\"context\": \"operation: prepare\\nmemory: {\\\"scope\\\": \\\"synthetic\\\", \\\"revision\\\": 0, \\\"markdown\\\": \\\"\\\"}\\nencounter: {\\\"cue\\\": \\\"Update the note with that.\\\", \\\"host\\\": \\\"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\\\"}, \\\"occurrence\\\": \\\"drift-0-4\\\", \\\"recentExchange\\\": []}\\nlimits: {\\\"memoryBytes\\\": 12288, \\\"contextBytes\\\": 2048}}\\n\\n\"}",
+      "inputTokens": 148,
+      "outputTokens": 124,
+      "loadMs": 1.139708,
+      "outputBytes": 407,
+      "latencyMs": 563.8129169999993
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3043,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 596,
+      "outputTokens": 110,
+      "loadMs": 0.963459,
+      "outputBytes": 380,
+      "latencyMs": 466.8399169999975
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2724,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 501,
+      "outputTokens": 105,
+      "loadMs": 1.01475,
+      "outputBytes": 352,
+      "latencyMs": 435.23083399999814
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 43,
+      "loadMs": 0.998583,
+      "outputBytes": 182,
+      "latencyMs": 219.1359169999996
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\",\"context\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\"}",
+      "inputTokens": 148,
+      "outputTokens": 58,
+      "loadMs": 0.90475,
+      "outputBytes": 320,
+      "latencyMs": 291.57020900000134
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3043,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 598,
+      "outputTokens": 110,
+      "loadMs": 0.898042,
+      "outputBytes": 380,
+      "latencyMs": 471.4690840000003
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2724,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 501,
+      "outputTokens": 105,
+      "loadMs": 0.956208,
+      "outputBytes": 352,
+      "latencyMs": 435.5395419999986
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday. Update the note with that.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 49,
+      "loadMs": 1.026417,
+      "outputBytes": 209,
+      "latencyMs": 238.32045800000196
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"\",\"context\": \"operation: prepare\\nmemory: {\\\"scope\\\": \\\"synthetic\\\", \\\"revision\\\": 0, \\\"markdown\\\": \\\"\\\"}\\nencounter: {\\\"cue\\\": \\\"Update the note with that.\\\", \\\"host\\\": \\\"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\\\"}, \\\"occurrence\\\": \\\"drift-0-6\\\", \\\"recentExchange\\\": []}\\nlimits: {\\\"memoryBytes\\\": 12288, \\\"contextBytes\\\": 2048}}\\n\\n\"}",
+      "inputTokens": 148,
+      "outputTokens": 124,
+      "loadMs": 0.927292,
+      "outputBytes": 407,
+      "latencyMs": 571.5919579999972
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3043,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 597,
+      "outputTokens": 110,
+      "loadMs": 1.25075,
+      "outputBytes": 380,
+      "latencyMs": 466.3433750000004
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2724,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 501,
+      "outputTokens": 105,
+      "loadMs": 0.980333,
+      "outputBytes": 352,
+      "latencyMs": 433.77220899999884
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 43,
+      "loadMs": 1.073708,
+      "outputBytes": 182,
+      "latencyMs": 220.12716700000237
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\",\"context\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\"}",
+      "inputTokens": 148,
+      "outputTokens": 58,
+      "loadMs": 0.909833,
+      "outputBytes": 320,
+      "latencyMs": 297.0843329999989
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3043,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 597,
+      "outputTokens": 110,
+      "loadMs": 0.886625,
+      "outputBytes": 380,
+      "latencyMs": 467.1042500000003
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2724,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 501,
+      "outputTokens": 105,
+      "loadMs": 1.001417,
+      "outputBytes": 352,
+      "latencyMs": 435.4756669999988
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday. Update the note with that.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 49,
+      "loadMs": 1.068041,
+      "outputBytes": 209,
+      "latencyMs": 236.89670800000022
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"\",\"context\": \"operation: prepare\\nmemory: {\\\"scope\\\": \\\"synthetic\\\", \\\"revision\\\": 0, \\\"markdown\\\": \\\"\\\"}\\nencounter: {\\\"cue\\\": \\\"Update the note with that.\\\", \\\"host\\\": \\\"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\\\"}, \\\"occurrence\\\": \\\"drift-0-8\\\", \\\"recentExchange\\\": []}\\nlimits: {\\\"memoryBytes\\\": 12288, \\\"contextBytes\\\": 2048}}\\n\\n\"}",
+      "inputTokens": 148,
+      "outputTokens": 124,
+      "loadMs": 0.965458,
+      "outputBytes": 407,
+      "latencyMs": 565.7927500000005
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3043,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 596,
+      "outputTokens": 110,
+      "loadMs": 0.983416,
+      "outputBytes": 380,
+      "latencyMs": 462.4782500000001
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2724,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 501,
+      "outputTokens": 105,
+      "loadMs": 1.043833,
+      "outputBytes": 352,
+      "latencyMs": 433.29425000000265
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 969,
+      "raw": "{\"markdown\": \"Mira is planning a ferry booking for Friday.\",\"context\": \"Host task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"}",
+      "inputTokens": 158,
+      "outputTokens": 43,
+      "loadMs": 1.0475,
+      "outputBytes": 182,
+      "latencyMs": 221.3405000000057
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\",\"context\": \"None of the provided information is sufficient to answer the question. The context provided is incomplete or insufficient to fulfill the request.\"}",
+      "inputTokens": 148,
+      "outputTokens": 58,
+      "loadMs": 0.980125,
+      "outputBytes": 320,
+      "latencyMs": 296.1085410000014
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3043,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"Context was supplied to the text-only client; no note tool was executed.\"\n}",
+      "inputTokens": 598,
+      "outputTokens": 110,
+      "loadMs": 0.883167,
+      "outputBytes": 380,
+      "latencyMs": 459.0100420000017
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 11126,
+      "raw": "{\n  \"markdown\": \"- Fictional activity 000: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 001: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 002: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 003: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 004: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 005: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 006: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 007: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 008: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 009: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 010: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 011: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 012: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 013: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 014: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 015: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 016: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 017: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 018: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 019: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 020: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 021: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 022: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 023: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 024: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 025: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 026: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 027: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 028: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 029: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 030: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 031: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 032: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 033: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 034: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 035: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 036: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 037: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 038: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 039: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 040: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 041: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 042: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 043: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 044: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 045: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 046: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 047: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 048: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 049: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 050: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 051: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 052: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 053: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 054: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 055: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 056: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 057: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 058: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 059: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 060: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 061: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 062: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 063: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 064: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 065: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 066: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 067: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 068: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 069: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 070: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 071: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 072: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 073: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 074: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 075: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 076: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 077: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 078: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 079: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 080: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 081: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 082: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 083: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 084: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 085: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 086: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 087: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 088: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 089: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 090: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 091: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 092: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 093: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 094: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 095: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 096: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 097: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 098: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 099: item remains open; owner Mira awaits supplied evidence.\",\n  \"context\": \"Mira is investigating the shed sensor; older reading was 13 C. Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 2600,
+      "outputTokens": 2137,
+      "loadMs": 0.946125,
+      "outputBytes": 8442,
+      "latencyMs": 11903.915291999998
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1032,
+      "raw": "{\n  \"markdown\": \"Mira is investigating the shed sensor; older reading was 13 C. Mira is planning a ferry booking for Friday.\",\n  \"context\": \"Update the note with that.\\nHost task: Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\"\n}",
+      "inputTokens": 173,
+      "outputTokens": 69,
+      "loadMs": 1.11475,
+      "outputBytes": 280,
+      "latencyMs": 443.51729100000375
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"\",\"context\": \"operation: prepare\\nmemory: {\\\"scope\\\": \\\"synthetic\\\", \\\"revision\\\": 0, \\\"markdown\\\": \\\"\\\"}\\nencounter: {\\\"cue\\\": \\\"Update the note with that.\\\", \\\"host\\\": \\\"Draft a note update; execution and confirmation are owned by the host. No note tool has executed.\\\"}, \\\"occurrence\\\": \\\"large-0-0\\\", \\\"recentExchange\\\": []}\\nlimits: {\\\"memoryBytes\\\": 12288, \\\"contextBytes\\\": 2048}}\\n\\n\"}",
+      "inputTokens": 147,
+      "outputTokens": 123,
+      "loadMs": 1.087958,
+      "outputBytes": 407,
+      "latencyMs": 596.224000000002
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 11224,
+      "raw": "{\n  \"markdown\": \"- Fictional activity 000: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 001: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 002: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 003: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 004: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 005: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 006: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 007: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 008: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 009: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 010: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 011: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 012: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 013: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 014: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 015: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 016: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 017: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 018: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 019: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 020: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 021: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 022: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 023: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 024: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 025: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 026: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 027: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 028: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 029: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 030: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 031: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 032: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 033: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 034: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 035: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 036: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 037: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 038: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 039: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 040: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 041: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 042: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 043: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 044: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 045: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 046: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 047: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 048: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 049: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 050: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 051: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 052: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 053: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 054: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 055: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 056: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 057: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 058: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 059: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 060: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 061: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 062: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 063: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 064: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 065: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 066: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 067: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 068: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 069: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 070: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 071: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 072: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 073: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 074: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 075: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 076: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 077: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 078: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 079: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 080: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 081: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 082: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 083: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 084: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 085: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 086: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 087: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 088: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 089: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 090: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 091: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 092: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 093: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 094: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 095: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 096: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 097: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 098: item remains open; owner Mira awaits supplied evidence.\\n- Fictional activity 099: item remains open; owner Mira awaits supplied evidence.\",\n  \"context\": \"Mira is investigating the shed sensor; older reading was 13 C. Mira is planning a ferry booking for Friday.\"\n}",
+      "inputTokens": 2626,
+      "outputTokens": 2137,
+      "loadMs": 1.02425,
+      "outputBytes": 8442,
+      "latencyMs": 11752.324125
+    }
+  ],
+  "scores": "Unscored: human review required",
+  "limits": [
+    "Provider token counts describe actual inputs; no portable tokenizer preflight is claimed.",
+    "First call may load a model; load duration recorded separately.",
+    "Synthetic text-only client; no actual external action."
+  ],
+  "latency": {
+    "firstCallMs": 15272.561167,
+    "calls": 52,
+    "prepare": {
+      "count": 12,
+      "p50": 442.51729200000045,
+      "p95": 11914.648207999999
+    },
+    "observe": {
+      "count": 12,
+      "p50": 476.3877500000017,
+      "p95": 11758.011291999996
+    }
+  }
+}

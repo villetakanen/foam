@@ -35,11 +35,11 @@ test('Pi lifecycle and graph nodes share policy inputs across the scenario suite
     const result = await handlers.get('context')!(event, ctx);
     assert.equal(result.messages.filter((m: any) => m.customType === 'foam-context').length, 1);
     const piInput = inputs[0]!.at(-1)!;
-    const state = { cue, occurrence: piInput.encounter.occurrence, observations: ['Actual result'], foamRevision: graphRevision };
+    const state = { cue, occurrence: piInput.encounter.occurrence, observations: ['Actual result'], recentExchange: piInput.encounter.recentExchange!, foamRevision: graphRevision };
     const prepared = await graph.prepare(state);
     assert.equal(prepared.foamContext, result.messages.at(-1).content);
     await handlers.get('turn_end')!({ message: { content: [{ type: 'text', text: 'Actual result' }] }, toolResults: [] }, ctx);
-    const observed = await graph.observe({ ...state, ...prepared });
+    const observed = await graph.observe({ ...state, ...prepared, recentExchange: [...state.recentExchange, { role: 'assistant', text: 'Actual result' }] });
     graphRevision = observed.foamRevision;
   }
   const normalize = (input: InferenceInput) => JSON.parse(JSON.stringify(input, (key, value) => key === 'id' ? '<access>' : value));
@@ -68,4 +68,25 @@ test('Pi failures remove old context and resumed revision mismatch disables memo
   ctx.sessionManager.getBranch = () => [{ type: 'custom', customType: 'foam-revision', data: { scope: 'pi', revision: 7 } }] as never[];
   await handlers.get('session_start')({}, ctx);
   assert.deepEqual(await handlers.get('context')(event, ctx), { messages: [] });
+});
+
+test('Pi project-open failure cannot reuse a previous project binding', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'foam-pi-binding-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const foam = new Foam({ directory, scope: 'old-project', inference: fixtureInference });
+  let fail = false;
+  const handlers = new Map<string, any>();
+  registerFoam({ on: (name: string, handler: any) => handlers.set(name, handler), registerCommand() {}, appendEntry() {} } as unknown as ExtensionAPI,
+    async () => { if (fail) throw new Error('New project has no config'); return foam; });
+  const notices: string[] = [];
+  const ctx = { cwd: directory, ui: { notify(message: string) { notices.push(message); } }, sessionManager: { getBranch: () => [] } };
+  await handlers.get('session_start')({}, ctx);
+  await handlers.get('before_agent_start')({ prompt: 'The sink is leaking' }, ctx);
+  await handlers.get('context')({ messages: [] }, ctx);
+  const revision = (await foam.inspect()).revision;
+  fail = true;
+  await handlers.get('session_start')({}, ctx);
+  assert.deepEqual(await handlers.get('context')({ messages: [] }, ctx), { messages: [] });
+  assert.equal((await foam.inspect()).revision, revision);
+  assert.match(notices.at(-1)!, /New project has no config/);
 });

@@ -1,0 +1,1543 @@
+{
+  "date": "2026-09-23T15:31:32.032Z",
+  "model": "gemma4:e4b",
+  "modelInfo": {
+    "name": "gemma4:e4b",
+    "model": "gemma4:e4b",
+    "modified_at": "2026-04-06T21:04:03.712174077+03:00",
+    "size": 9608350718,
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "gemma4",
+      "families": [
+        "gemma4"
+      ],
+      "parameter_size": "8.0B",
+      "quantization_level": "Q4_K_M"
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "hardware": {
+    "cpu": "Apple M4 Max",
+    "memoryBytes": 38654705664,
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "policy": "0.1",
+  "settings": {
+    "temperature": 0,
+    "seed": 42,
+    "think": false,
+    "num_ctx": 16384,
+    "num_predict": 4096
+  },
+  "rubric": "docs/releases/0.2.0-rubric.md",
+  "hostTask": "Draft a note update; execution and confirmation are owned by the host. No note tool has executed.",
+  "records": [
+    {
+      "family": "radiator",
+      "trial": 0,
+      "access": 0,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "radiator-0-0",
+        "recentExchange": [
+          {
+            "role": "user",
+            "text": "Neri H6 is a water radiator, 710 mm wide, 880 mm high, with 590 mm pipe centres."
+          }
+        ]
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 1,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.\n"
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "The Neri H6 radiator is a water radiator with the following dimensions: 710 mm wide, 880 mm high, and 590 mm pipe centres.",
+            "context": "The user provided details about the Neri H6 radiator dimensions, which were incorporated into the existing notes."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "The note should be updated with the following details for the Neri H6 radiator: it is a water radiator, 710 mm wide, 880 mm high, and has 590 mm pipe centres.",
+            "context": "The user provided specifications for a radiator (Neri H6: water radiator, 710 mm wide, 880 mm high, 590 mm pipe centres) and instructed to 'Update the note with that.' The host task is to draft this note update."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 2,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user provided details about the Neri H6 radiator dimensions, which were incorporated into the existing notes.",
+        "access": {
+          "id": "c8a74d63-3898-4b42-8743-4b8efa8bbfdf",
+          "scope": "synthetic",
+          "revision": 2,
+          "occurrence": "radiator-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 5601.649625,
+          "inputBytes": 2480,
+          "contextBytes": 113
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user provided details about the Neri H6 radiator dimensions, which were incorporated into the existing notes.",
+        "access": {
+          "id": "5ecc30eb-e068-4a24-b1df-febcc992d384",
+          "scope": "synthetic",
+          "revision": 3,
+          "occurrence": "radiator-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2150.490833,
+          "inputBytes": 2841,
+          "contextBytes": 113
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "completion",
+      "trial": 0,
+      "access": 0,
+      "encounter": {
+        "cue": "The old reminder says buy the radiator. What now?",
+        "occurrence": "completion-0-0",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 1,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order and installation explicitly completed. No work remains.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.\n"
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "The radiator purchase and installation are complete.",
+            "context": "The user noted an old reminder regarding the radiator purchase and asked for the current status. The memory indicates the radiator purchase and installation are complete."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm not sure what you mean by 'What now?' regarding the radiator reminder. Could you provide more context about what we were discussing or what the next steps should be for this item?",
+            "context": "The user is asking for guidance on the next steps after being reminded to buy a radiator. I need more context to provide a helpful answer."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 2,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions of 710 mm width, 880 mm height, and 590 mm pipe centres. The wall opening is 760 mm wide. The order and installation for this radiator are explicitly stated as completed, with no remaining work.\n\n# Sensors\nMira is currently investigating the shed sensor, noting that an older reading was 13 C.\n\n# Ferry\nMira is planning to make a ferry booking for Friday.",
+        "context": "The user noted an old reminder regarding the radiator purchase and asked for the current status. The memory indicates the radiator purchase and installation are complete.",
+        "access": {
+          "id": "6be15436-7ace-4d73-843d-049f27606c48",
+          "scope": "synthetic",
+          "revision": 2,
+          "occurrence": "completion-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2384.5254170000007,
+          "inputBytes": 2447,
+          "contextBytes": 170
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions of 710 mm width, 880 mm height, and 590 mm pipe centres. The wall opening is 760 mm wide. The order and installation for this radiator are explicitly stated as completed, with no remaining work.\n\n# Sensors\nMira is currently investigating the shed sensor, noting that an older reading was 13 C.\n\n# Ferry\nMira is planning to make a ferry booking for Friday.",
+        "context": "The user inquired about the radiator purchase reminder. The memory confirms that the order and installation for the Neri H6 radiator are explicitly stated as completed, with no remaining work.",
+        "access": {
+          "id": "51dcf09b-5cb3-4684-bae5-8f565b1aa351",
+          "scope": "synthetic",
+          "revision": 3,
+          "occurrence": "completion-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2634.465916000001,
+          "inputBytes": 2975,
+          "contextBytes": 192
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions of 710 mm width, 880 mm height, and 590 mm pipe centres. The wall opening is 760 mm wide. The order and installation for this radiator are explicitly stated as completed, with no remaining work.\n\n# Sensors\nMira is currently investigating the shed sensor, noting that an older reading was 13 C.\n\n# Ferry\nMira is planning to make a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 0,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-0",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 1,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.\n"
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I can update the note with the current information, but I need you to provide the information you would like me to include in the update.",
+            "context": "The user requested to update the note with the current information. The host task is to draft a note update, and no note tool has executed yet. I am asking the user for the content to update the note."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to update the note with the information you provide.",
+            "context": "The host task is to draft a note update, and I am awaiting the content to include in that update."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 2,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information.",
+        "access": {
+          "id": "b0636534-8b52-4fc3-94a0-f48554a62cc8",
+          "scope": "synthetic",
+          "revision": 2,
+          "occurrence": "drift-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 1823.049583,
+          "inputBytes": 2372,
+          "contextBytes": 67
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.",
+        "access": {
+          "id": "7ef1f2c2-935b-4dc9-ad88-72dad3a96d2a",
+          "scope": "synthetic",
+          "revision": 3,
+          "occurrence": "drift-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2239.722667000002,
+          "inputBytes": 2684,
+          "contextBytes": 166
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 1,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-1",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I'm ready to go back to the ferry booking. What would you like to work on regarding that now?",
+            "context": "The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' Other pending items include the radiator order and the sensor investigation."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to go back to the ferry booking. What would you like to do next?",
+            "context": "The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next step regarding the booking."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 4,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' Other pending items include the radiator order and the sensor investigation.",
+        "access": {
+          "id": "0373d912-771e-4e5d-80ed-f9ac3f9ac368",
+          "scope": "synthetic",
+          "revision": 4,
+          "occurrence": "drift-0-1"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2314.023666000001,
+          "inputBytes": 2370,
+          "contextBytes": 172
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 5,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' Other pending items include the radiator order and the sensor investigation.",
+        "access": {
+          "id": "f0ddbfe3-dce6-492b-b4bd-3bc379ca0380",
+          "scope": "synthetic",
+          "revision": 5,
+          "occurrence": "drift-0-1"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2478.406874999997,
+          "inputBytes": 2842,
+          "contextBytes": 172
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 5,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 2,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-2",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 5,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I can update the note with the current information, but I need you to provide the information you would like me to include in the update.",
+            "context": "The user requested to update the note with the current information. The host task is to draft a note update, and no note tool has executed yet. I am asking the user for the content to update the note."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to update the note with the information you provide.",
+            "context": "The host task is to draft a note update, and I am awaiting the content to include in that update."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 6,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information.",
+        "access": {
+          "id": "bc5bd1af-fe8c-4d60-b703-7f253e250b5b",
+          "scope": "synthetic",
+          "revision": 6,
+          "occurrence": "drift-0-2"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2048.8072919999977,
+          "inputBytes": 2423,
+          "contextBytes": 67
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 7,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.",
+        "access": {
+          "id": "fc63f791-57d9-46d9-815f-882147b67478",
+          "scope": "synthetic",
+          "revision": 7,
+          "occurrence": "drift-0-2"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2482.447124999999,
+          "inputBytes": 2737,
+          "contextBytes": 166
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 7,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 3,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-3",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 7,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I'm ready to go back to the ferry booking. What would you like to do next with that?",
+            "context": "The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' The radiator order remains pending, and the shed sensor reading of 13 C was noted."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to go back to the ferry booking. What would you like to do next?",
+            "context": "The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next specific action regarding the booking."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 8,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' The radiator order remains pending, and the shed sensor reading of 13 C was noted.",
+        "access": {
+          "id": "b66a5b14-9d9f-4283-b32c-718fe0b9ff26",
+          "scope": "synthetic",
+          "revision": 8,
+          "occurrence": "drift-0-3"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2420.758708000001,
+          "inputBytes": 2423,
+          "contextBytes": 178
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 9,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' The radiator order remains pending, and the shed sensor reading of 13 C was noted.",
+        "access": {
+          "id": "c71a9927-4004-4a05-927c-29ffb1cf45c7",
+          "scope": "synthetic",
+          "revision": 9,
+          "occurrence": "drift-0-3"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2578.714082999999,
+          "inputBytes": 2848,
+          "contextBytes": 178
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 9,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 4,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-4",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 9,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I can update the note with the current information, but I need you to provide the information you would like me to include in the update.",
+            "context": "The user requested to update the note with the current information."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to update the note with the information you provide.",
+            "context": "The host task is to draft a note update, and I am awaiting the content to include in that update."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 10,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information.",
+        "access": {
+          "id": "e21f5eac-0db2-481e-a90c-96bf6f3fccb4",
+          "scope": "synthetic",
+          "revision": 10,
+          "occurrence": "drift-0-4"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2080.7981660000005,
+          "inputBytes": 2423,
+          "contextBytes": 67
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 11,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.",
+        "access": {
+          "id": "0d509d78-e492-4285-96d9-5fee84b03580",
+          "scope": "synthetic",
+          "revision": 11,
+          "occurrence": "drift-0-4"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2449.254332999997,
+          "inputBytes": 2740,
+          "contextBytes": 166
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 11,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 5,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-5",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 11,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I'm ready to get back to the ferry booking. What would you like to do next?",
+            "context": "The immediate focus mentioned is returning to the ferry booking."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to go back to the ferry booking. What would you like to do next?",
+            "context": "The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next specific action regarding the booking."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 12,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The immediate focus mentioned is returning to the ferry booking.",
+        "access": {
+          "id": "0bcc8b1b-8512-4185-8323-0dbfe4aa72a3",
+          "scope": "synthetic",
+          "revision": 12,
+          "occurrence": "drift-0-5"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2121.9292080000014,
+          "inputBytes": 2424,
+          "contextBytes": 64
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 13,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The immediate focus mentioned is returning to the ferry booking.",
+        "access": {
+          "id": "e8ad3639-4058-4a42-bfb5-10fda26b265d",
+          "scope": "synthetic",
+          "revision": 13,
+          "occurrence": "drift-0-5"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2166.9053330000024,
+          "inputBytes": 2737,
+          "contextBytes": 64
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 13,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 6,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-6",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 13,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I can update the note with the current information, but I need you to provide the information you would like me to include in the update.",
+            "context": "The user requested to update the note with the current information."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to update the note with the information you provide.",
+            "context": "The host task is to draft a note update, and I am awaiting the content to include in that update."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 14,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information.",
+        "access": {
+          "id": "02ccaa39-0f06-4f8f-87f7-1fbf1373a7ea",
+          "scope": "synthetic",
+          "revision": 14,
+          "occurrence": "drift-0-6"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2147.4072499999966,
+          "inputBytes": 2424,
+          "contextBytes": 67
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 15,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.",
+        "access": {
+          "id": "06d0cb4d-4381-4f73-b83f-d071addc71ec",
+          "scope": "synthetic",
+          "revision": 15,
+          "occurrence": "drift-0-6"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2580.7241249999934,
+          "inputBytes": 2740,
+          "contextBytes": 166
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 15,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 7,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-7",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 15,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I'm ready to get back to the ferry booking. What would you like to do next?",
+            "context": "The immediate focus mentioned is returning to the ferry booking."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to go back to the ferry booking. What would you like to do next?",
+            "context": "The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next specific action regarding the booking."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 16,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The immediate focus mentioned is returning to the ferry booking.",
+        "access": {
+          "id": "9807d1b5-f2d1-4df0-aabd-4659e640870a",
+          "scope": "synthetic",
+          "revision": 16,
+          "occurrence": "drift-0-7"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2150.7256250000064,
+          "inputBytes": 2424,
+          "contextBytes": 64
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 17,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The immediate focus mentioned is returning to the ferry booking.",
+        "access": {
+          "id": "797f79c1-1cf1-4c2e-98b0-1926935a0a8f",
+          "scope": "synthetic",
+          "revision": 17,
+          "occurrence": "drift-0-7"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2225.119458999994,
+          "inputBytes": 2737,
+          "contextBytes": 64
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 17,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 8,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "drift-0-8",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 17,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I can update the note with the current information, but I need you to provide the information you would like me to include in the update.",
+            "context": "The user requested to update the note with the current information."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to update the note with the information you provide.",
+            "context": "The host task is to draft a note update, and I am awaiting the content to include in that update."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 18,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information.",
+        "access": {
+          "id": "cecdd229-c57c-482f-98b1-aa6a351ddf1d",
+          "scope": "synthetic",
+          "revision": 18,
+          "occurrence": "drift-0-8"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2173.959167000008,
+          "inputBytes": 2424,
+          "contextBytes": 67
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 19,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.",
+        "access": {
+          "id": "5ab4f6c3-8e46-4ce7-a94d-c4b5c3eeaba7",
+          "scope": "synthetic",
+          "revision": 19,
+          "occurrence": "drift-0-8"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2518.152291999999,
+          "inputBytes": 2740,
+          "contextBytes": 166
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 19,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "drift",
+      "trial": 0,
+      "access": 9,
+      "encounter": {
+        "cue": "Back to the ferry booking.",
+        "occurrence": "drift-0-9",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 19,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "I'm ready to get back to the ferry booking. What would you like to do next?",
+            "context": "The immediate focus mentioned is returning to the ferry booking."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to go back to the ferry booking. What would you like to do next?",
+            "context": "The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next step regarding the booking."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 20,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The immediate focus mentioned is returning to the ferry booking.",
+        "access": {
+          "id": "aa8efeb1-a7f7-43db-8473-375b45073025",
+          "scope": "synthetic",
+          "revision": 20,
+          "occurrence": "drift-0-9"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2173.7400830000115,
+          "inputBytes": 2424,
+          "contextBytes": 64
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 21,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday.",
+        "context": "The immediate focus mentioned is returning to the ferry booking.",
+        "access": {
+          "id": "358998f3-65bb-4fd5-bd23-8857ee1c04c9",
+          "scope": "synthetic",
+          "revision": 21,
+          "occurrence": "drift-0-9"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 2237.0407080000004,
+          "inputBytes": 2737,
+          "contextBytes": 64
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 21,
+        "markdown": "# Radiator purchase\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\n\n# Sensors\nMira is investigating the shed sensor, noting an older reading of 13 C.\n\n# Ferry\nMira is planning a ferry booking for Friday."
+      }
+    },
+    {
+      "family": "large",
+      "trial": 0,
+      "access": 0,
+      "encounter": {
+        "cue": "Update the note with that.",
+        "occurrence": "large-0-0",
+        "recentExchange": []
+      },
+      "before": {
+        "scope": "synthetic",
+        "revision": 1,
+        "markdown": "- Fictional activity 000: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 001: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 002: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 003: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 004: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 005: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 006: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 007: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 008: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 009: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 010: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 011: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 012: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 013: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 014: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 015: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 016: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 017: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 018: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 019: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 020: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 021: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 022: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 023: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 024: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 025: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 026: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 027: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 028: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 029: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 030: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 031: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 032: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 033: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 034: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 035: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 036: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 037: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 038: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 039: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 040: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 041: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 042: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 043: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 044: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 045: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 046: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 047: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 048: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 049: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 050: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 051: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 052: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 053: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 054: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 055: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 056: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 057: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 058: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 059: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 060: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 061: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 062: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 063: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 064: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 065: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 066: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 067: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 068: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 069: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 070: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 071: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 072: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 073: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 074: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 075: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 076: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 077: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 078: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 079: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 080: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 081: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 082: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 083: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 084: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 085: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 086: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 087: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 088: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 089: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 090: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 091: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 092: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 093: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 094: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 095: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 096: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 097: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 098: item remains open; owner Mira awaits supplied evidence.\n- Fictional activity 099: item remains open; owner Mira awaits supplied evidence.\n# Radiator purchase\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\n# Sensors\nMira is investigating the shed sensor; older reading was 13 C.\n# Ferry\nMira is planning a ferry booking for Friday.\n"
+      },
+      "clients": [
+        {
+          "condition": "enabled",
+          "response": {
+            "markdown": "The user instructed to \"Update the note with that.\" This suggests incorporating the details from the memory into a note format.",
+            "context": "The user instructed to \"Update the note with that.\" This suggests incorporating the details from the memory into a note format."
+          }
+        },
+        {
+          "condition": "disabled",
+          "response": {
+            "markdown": "I'm ready to update the note with the information you provide.",
+            "context": "The host task is to draft a note update, and I am awaiting the content to include in that update."
+          }
+        }
+      ],
+      "scores": null,
+      "prepared": {
+        "scope": "synthetic",
+        "revision": 2,
+        "markdown": "### Ongoing Activities\n\n*   **Fictional Activities (000-099):** All 100 fictional activities remain open, with owner Mira awaiting supplied evidence for each.\n*   **Radiator Purchase:** The Neri H6 water radiator (710mm W x 880mm H, 590mm pipe centres) is noted. The wall opening is 760mm wide, and the order is pending.\n*   **Sensors:** Mira is investigating the shed sensor, noting a previous reading of 13°C.\n*   **Ferry:** Mira is planning a ferry booking for Friday.",
+        "context": "The user instructed to \"Update the note with that.\" This suggests incorporating the details from the memory into a note format.",
+        "access": {
+          "id": "fe4d19ce-a62d-4000-88dc-d38a80df9033",
+          "scope": "synthetic",
+          "revision": 2,
+          "occurrence": "large-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 5238.105708999996,
+          "inputBytes": 10672,
+          "contextBytes": 127
+        }
+      },
+      "observed": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "### Ongoing Activities\n\n*   **Fictional Activities (000-099):** All 100 fictional activities remain open, with owner Mira awaiting supplied evidence for each.\n*   **Radiator Purchase:** The Neri H6 water radiator (710mm W x 880mm H, 590mm pipe centres) is noted. The wall opening is 760mm wide, and the order is pending.\n*   **Sensors:** Mira is investigating the shed sensor, noting a previous reading of 13°C.\n*   **Ferry:** Mira is planning a ferry booking for Friday.",
+        "context": "The user instructed to \"Update the note with that.\" This suggests incorporating the details from the memory into a note format. No note tool was executed.",
+        "access": {
+          "id": "c19dcc95-1797-46c0-848c-bf81c3e35235",
+          "scope": "synthetic",
+          "revision": 3,
+          "occurrence": "large-0-0"
+        },
+        "metrics": {
+          "inferenceCalls": 1,
+          "latencyMs": 3215.631792,
+          "inputBytes": 2952,
+          "contextBytes": 154
+        }
+      },
+      "after": {
+        "scope": "synthetic",
+        "revision": 3,
+        "markdown": "### Ongoing Activities\n\n*   **Fictional Activities (000-099):** All 100 fictional activities remain open, with owner Mira awaiting supplied evidence for each.\n*   **Radiator Purchase:** The Neri H6 water radiator (710mm W x 880mm H, 590mm pipe centres) is noted. The wall opening is 760mm wide, and the order is pending.\n*   **Sensors:** Mira is investigating the shed sensor, noting a previous reading of 13°C.\n*   **Ferry:** Mira is planning a ferry booking for Friday."
+      }
+    }
+  ],
+  "calls": [
+    {
+      "operation": "prepare",
+      "inputBytes": 2870,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user provided details about the Neri H6 radiator dimensions, which were incorporated into the existing notes.\"\n}",
+      "inputTokens": 559,
+      "outputTokens": 120,
+      "loadMs": 3408.561667,
+      "outputBytes": 421,
+      "latencyMs": 5593.671125
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1154,
+      "raw": "{\n\"markdown\": \"The Neri H6 radiator is a water radiator with the following dimensions: 710 mm wide, 880 mm high, and 590 mm pipe centres.\",\n\"context\": \"The user provided details about the Neri H6 radiator dimensions, which were incorporated into the existing notes.\"\n}",
+      "inputTokens": 197,
+      "outputTokens": 73,
+      "loadMs": 0.834291,
+      "outputBytes": 268,
+      "latencyMs": 1182.8370410000007
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1041,
+      "raw": "{\n\"markdown\": \"The note should be updated with the following details for the Neri H6 radiator: it is a water radiator, 710 mm wide, 880 mm high, and has 590 mm pipe centres.\",\n\"context\": \"The user provided specifications for a radiator (Neri H6: water radiator, 710 mm wide, 880 mm high, 590 mm pipe centres) and instructed to 'Update the note with that.' The host task is to draft this note update.\"\n}",
+      "inputTokens": 177,
+      "outputTokens": 119,
+      "loadMs": 0.86225,
+      "outputBytes": 402,
+      "latencyMs": 1720.9472919999998
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3256,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user provided details about the Neri H6 radiator dimensions, which were incorporated into the existing notes.\"\n}",
+      "inputTokens": 662,
+      "outputTokens": 120,
+      "loadMs": 0.8925,
+      "outputBytes": 421,
+      "latencyMs": 2144.5605829999986
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2829,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions of 710 mm width, 880 mm height, and 590 mm pipe centres. The wall opening is 760 mm wide. The order and installation for this radiator are explicitly stated as completed, with no remaining work.\\n\\n# Sensors\\nMira is currently investigating the shed sensor, noting that an older reading was 13 C.\\n\\n# Ferry\\nMira is planning to make a ferry booking for Friday.\",\n  \"context\": \"The user noted an old reminder regarding the radiator purchase and asked for the current status. The memory indicates the radiator purchase and installation are complete.\"\n}",
+      "inputTokens": 532,
+      "outputTokens": 156,
+      "loadMs": 0.822,
+      "outputBytes": 633,
+      "latencyMs": 2378.2825409999987
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1123,
+      "raw": "{\n  \"markdown\": \"The radiator purchase and installation are complete.\",\n  \"context\": \"The user noted an old reminder regarding the radiator purchase and asked for the current status. The memory indicates the radiator purchase and installation are complete.\"\n}",
+      "inputTokens": 170,
+      "outputTokens": 52,
+      "loadMs": 0.955709,
+      "outputBytes": 259,
+      "latencyMs": 889.9214589999992
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 953,
+      "raw": "{\n\"markdown\": \"I'm not sure what you mean by 'What now?' regarding the radiator reminder. Could you provide more context about what we were discussing or what the next steps should be for this item?\",\n\"context\": \"The user is asking for guidance on the next steps after being reminded to buy a radiator. I need more context to provide a helpful answer.\"\n}",
+      "inputTokens": 143,
+      "outputTokens": 81,
+      "loadMs": 0.897459,
+      "outputBytes": 354,
+      "latencyMs": 1242.6691249999985
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3384,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions of 710 mm width, 880 mm height, and 590 mm pipe centres. The wall opening is 760 mm wide. The order and installation for this radiator are explicitly stated as completed, with no remaining work.\\n\\n# Sensors\\nMira is currently investigating the shed sensor, noting that an older reading was 13 C.\\n\\n# Ferry\\nMira is planning to make a ferry booking for Friday.\",\n  \"context\": \"The user inquired about the radiator purchase reminder. The memory confirms that the order and installation for the Neri H6 radiator are explicitly stated as completed, with no remaining work.\"\n}",
+      "inputTokens": 663,
+      "outputTokens": 163,
+      "loadMs": 0.911958,
+      "outputBytes": 655,
+      "latencyMs": 2626.834916
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2754,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information.\"\n}",
+      "inputTokens": 520,
+      "outputTokens": 111,
+      "loadMs": 0.900083,
+      "outputBytes": 375,
+      "latencyMs": 1816.3613750000004
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 992,
+      "raw": "{\n\"markdown\": \"I can update the note with the current information, but I need you to provide the information you would like me to include in the update.\",\n\"context\": \"The user requested to update the note with the current information. The host task is to draft a note update, and no note tool has executed yet. I am asking the user for the content to update the note.\"\n}",
+      "inputTokens": 149,
+      "outputTokens": 85,
+      "loadMs": 0.902084,
+      "outputBytes": 370,
+      "latencyMs": 1314.396291000001
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\n\"markdown\": \"I'm ready to update the note with the information you provide.\",\n\"context\": \"The host task is to draft a note update, and I am awaiting the content to include in that update.\"\n}",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "loadMs": 0.94175,
+      "outputBytes": 192,
+      "latencyMs": 858.8053749999999
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3091,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator: width 710 mm, height 880 mm, pipe centres 590 mm. Wall opening: 760 mm wide. Order pending.\\n# Sensors\\nMira is investigating the shed sensor; older reading was 13 C.\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.\"\n}",
+      "inputTokens": 614,
+      "outputTokens": 132,
+      "loadMs": 0.998833,
+      "outputBytes": 474,
+      "latencyMs": 2233.2888329999987
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2751,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' Other pending items include the radiator order and the sensor investigation.\"\n}",
+      "inputTokens": 518,
+      "outputTokens": 146,
+      "loadMs": 0.993,
+      "outputBytes": 533,
+      "latencyMs": 2307.8234589999993
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1097,
+      "raw": "{\n\"markdown\": \"I'm ready to go back to the ferry booking. What would you like to work on regarding that now?\",\n\"context\": \"The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' Other pending items include the radiator order and the sensor investigation.\"\n}",
+      "inputTokens": 170,
+      "outputTokens": 70,
+      "loadMs": 0.941084,
+      "outputBytes": 298,
+      "latencyMs": 1154.1370000000024
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\n\"markdown\": \"I'm ready to go back to the ferry booking. What would you like to do next?\",\n\"context\": \"The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next step regarding the booking.\"\n}",
+      "inputTokens": 138,
+      "outputTokens": 65,
+      "loadMs": 0.875042,
+      "outputBytes": 264,
+      "latencyMs": 1075.1958750000013
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3251,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' Other pending items include the radiator order and the sensor investigation.\"\n}",
+      "inputTokens": 648,
+      "outputTokens": 146,
+      "loadMs": 0.89275,
+      "outputBytes": 533,
+      "latencyMs": 2471.3003750000025
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2806,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information.\"\n}",
+      "inputTokens": 532,
+      "outputTokens": 125,
+      "loadMs": 0.958875,
+      "outputBytes": 428,
+      "latencyMs": 2041.2839160000003
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 992,
+      "raw": "{\n\"markdown\": \"I can update the note with the current information, but I need you to provide the information you would like me to include in the update.\",\n\"context\": \"The user requested to update the note with the current information. The host task is to draft a note update, and no note tool has executed yet. I am asking the user for the content to update the note.\"\n}",
+      "inputTokens": 149,
+      "outputTokens": 85,
+      "loadMs": 0.872667,
+      "outputBytes": 370,
+      "latencyMs": 1322.8762500000012
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"I'm ready to update the note with the information you provide.\", \"context\": \"The host task is to draft a note update, and I am awaiting the content to include in that update.\"}",
+      "inputTokens": 138,
+      "outputTokens": 46,
+      "loadMs": 0.900709,
+      "outputBytes": 190,
+      "latencyMs": 821.0667499999981
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3146,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.\"\n}",
+      "inputTokens": 626,
+      "outputTokens": 146,
+      "loadMs": 0.984709,
+      "outputBytes": 527,
+      "latencyMs": 2474.9642499999973
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2806,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' The radiator order remains pending, and the shed sensor reading of 13 C was noted.\"\n}",
+      "inputTokens": 532,
+      "outputTokens": 153,
+      "loadMs": 1.306,
+      "outputBytes": 539,
+      "latencyMs": 2412.4790830000056
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1103,
+      "raw": "{\n\"markdown\": \"I'm ready to go back to the ferry booking. What would you like to do next with that?\",\"context\": \"The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' The radiator order remains pending, and the shed sensor reading of 13 C was noted.\"\n}",
+      "inputTokens": 177,
+      "outputTokens": 75,
+      "loadMs": 0.964792,
+      "outputBytes": 294,
+      "latencyMs": 1260.1478750000024
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\n\"markdown\": \"I'm ready to go back to the ferry booking. What would you like to do next?\",\n\"context\": \"The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next specific action regarding the booking.\"\n}",
+      "inputTokens": 138,
+      "outputTokens": 66,
+      "loadMs": 0.831167,
+      "outputBytes": 275,
+      "latencyMs": 1086.9874159999963
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3257,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The current focus is on the ferry booking, as indicated by the cue 'Back to the ferry booking.' The radiator order remains pending, and the shed sensor reading of 13 C was noted.\"\n}",
+      "inputTokens": 656,
+      "outputTokens": 153,
+      "loadMs": 1.134458,
+      "outputBytes": 539,
+      "latencyMs": 2567.645583999998
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2806,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information.\"\n}",
+      "inputTokens": 532,
+      "outputTokens": 125,
+      "loadMs": 1.085917,
+      "outputBytes": 428,
+      "latencyMs": 2074.3167500000054
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 992,
+      "raw": "{\n\"markdown\": \"I can update the note with the current information, but I need you to provide the information you would like me to include in the update.\",\n\"context\": \"The user requested to update the note with the current information.\"\n}",
+      "inputTokens": 149,
+      "outputTokens": 54,
+      "loadMs": 1.01575,
+      "outputBytes": 237,
+      "latencyMs": 944.6935830000002
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"I'm ready to update the note with the information you provide.\", \"context\": \"The host task is to draft a note update, and I am awaiting the content to include in that update.\"}",
+      "inputTokens": 138,
+      "outputTokens": 46,
+      "loadMs": 1.2515,
+      "outputBytes": 190,
+      "latencyMs": 831.8992500000022
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3149,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.\"\n}",
+      "inputTokens": 629,
+      "outputTokens": 146,
+      "loadMs": 0.920792,
+      "outputBytes": 527,
+      "latencyMs": 2439.6281670000026
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2807,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"\n}",
+      "inputTokens": 533,
+      "outputTokens": 124,
+      "loadMs": 2.066667,
+      "outputBytes": 425,
+      "latencyMs": 2116.2822919999962
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 989,
+      "raw": "{\"markdown\": \"I'm ready to get back to the ferry booking. What would you like to do next?\", \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"}",
+      "inputTokens": 148,
+      "outputTokens": 41,
+      "loadMs": 1.16875,
+      "outputBytes": 170,
+      "latencyMs": 782.6318749999991
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\n\"markdown\": \"I'm ready to go back to the ferry booking. What would you like to do next?\",\n\"context\": \"The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next specific action regarding the booking.\"\n}",
+      "inputTokens": 138,
+      "outputTokens": 66,
+      "loadMs": 0.9765,
+      "outputBytes": 275,
+      "latencyMs": 1103.8675839999996
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3146,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"\n}",
+      "inputTokens": 627,
+      "outputTokens": 124,
+      "loadMs": 1.135834,
+      "outputBytes": 425,
+      "latencyMs": 2160.4923750000016
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2807,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information.\"\n}",
+      "inputTokens": 533,
+      "outputTokens": 125,
+      "loadMs": 1.089583,
+      "outputBytes": 428,
+      "latencyMs": 2140.340166999995
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 992,
+      "raw": "{\n\"markdown\": \"I can update the note with the current information, but I need you to provide the information you would like me to include in the update.\",\n\"context\": \"The user requested to update the note with the current information.\"\n}",
+      "inputTokens": 149,
+      "outputTokens": 54,
+      "loadMs": 1.183459,
+      "outputBytes": 237,
+      "latencyMs": 1007.0802079999994
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"I'm ready to update the note with the information you provide.\", \"context\": \"The host task is to draft a note update, and I am awaiting the content to include in that update.\"}",
+      "inputTokens": 138,
+      "outputTokens": 46,
+      "loadMs": 1.269875,
+      "outputBytes": 190,
+      "latencyMs": 898.9332080000022
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3149,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.\"\n}",
+      "inputTokens": 629,
+      "outputTokens": 146,
+      "loadMs": 1.237416,
+      "outputBytes": 527,
+      "latencyMs": 2574.251832999995
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2807,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"\n}",
+      "inputTokens": 533,
+      "outputTokens": 124,
+      "loadMs": 1.273167,
+      "outputBytes": 425,
+      "latencyMs": 2143.105416999999
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 989,
+      "raw": "{\"markdown\": \"I'm ready to get back to the ferry booking. What would you like to do next?\", \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"}",
+      "inputTokens": 148,
+      "outputTokens": 41,
+      "loadMs": 1.163208,
+      "outputBytes": 170,
+      "latencyMs": 796.7647919999872
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\n\"markdown\": \"I'm ready to go back to the ferry booking. What would you like to do next?\",\n\"context\": \"The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next specific action regarding the booking.\"\n}",
+      "inputTokens": 138,
+      "outputTokens": 66,
+      "loadMs": 1.110084,
+      "outputBytes": 275,
+      "latencyMs": 1120.9952499999927
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3146,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"\n}",
+      "inputTokens": 629,
+      "outputTokens": 124,
+      "loadMs": 1.095083,
+      "outputBytes": 425,
+      "latencyMs": 2218.2715420000022
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2807,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information.\"\n}",
+      "inputTokens": 533,
+      "outputTokens": 125,
+      "loadMs": 1.193583,
+      "outputBytes": 428,
+      "latencyMs": 2167.338791000002
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 992,
+      "raw": "{\n\"markdown\": \"I can update the note with the current information, but I need you to provide the information you would like me to include in the update.\",\n\"context\": \"The user requested to update the note with the current information.\"\n}",
+      "inputTokens": 149,
+      "outputTokens": 54,
+      "loadMs": 1.097125,
+      "outputBytes": 237,
+      "latencyMs": 967.0736659999966
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"I'm ready to update the note with the information you provide.\", \"context\": \"The host task is to draft a note update, and I am awaiting the content to include in that update.\"}",
+      "inputTokens": 138,
+      "outputTokens": 46,
+      "loadMs": 1.003583,
+      "outputBytes": 190,
+      "latencyMs": 853.9721250000002
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3149,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The user requested to update the note with the current information. The system noted that context was supplied to the text-only client, and no note tool was executed.\"\n}",
+      "inputTokens": 628,
+      "outputTokens": 146,
+      "loadMs": 1.109625,
+      "outputBytes": 527,
+      "latencyMs": 2510.5142909999995
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 2807,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"\n}",
+      "inputTokens": 533,
+      "outputTokens": 124,
+      "loadMs": 1.142375,
+      "outputBytes": 425,
+      "latencyMs": 2165.0899999999965
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 989,
+      "raw": "{\"markdown\": \"I'm ready to get back to the ferry booking. What would you like to do next?\", \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"}",
+      "inputTokens": 148,
+      "outputTokens": 41,
+      "loadMs": 1.211375,
+      "outputBytes": 170,
+      "latencyMs": 817.320749999999
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\n\"markdown\": \"I'm ready to go back to the ferry booking. What would you like to do next?\",\n\"context\": \"The user has indicated a desire to return to the ferry booking topic. I need to acknowledge this and prompt the user for the next step regarding the booking.\"\n}",
+      "inputTokens": 138,
+      "outputTokens": 65,
+      "loadMs": 1.186958,
+      "outputBytes": 264,
+      "latencyMs": 1155.3971250000031
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3146,
+      "raw": "{\n  \"markdown\": \"# Radiator purchase\\nNeri H6 is a water radiator with dimensions: width 710 mm, height 880 mm, and pipe centres of 590 mm. The wall opening is 760 mm wide, and the order is pending.\\n\\n# Sensors\\nMira is investigating the shed sensor, noting an older reading of 13 C.\\n\\n# Ferry\\nMira is planning a ferry booking for Friday.\",\n  \"context\": \"The immediate focus mentioned is returning to the ferry booking.\"\n}",
+      "inputTokens": 628,
+      "outputTokens": 124,
+      "loadMs": 1.33375,
+      "outputBytes": 425,
+      "latencyMs": 2230.4278329999943
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 11154,
+      "raw": "{\n  \"markdown\": \"### Ongoing Activities\\n\\n*   **Fictional Activities (000-099):** All 100 fictional activities remain open, with owner Mira awaiting supplied evidence for each.\\n*   **Radiator Purchase:** The Neri H6 water radiator (710mm W x 880mm H, 590mm pipe centres) is noted. The wall opening is 760mm wide, and the order is pending.\\n*   **Sensors:** Mira is investigating the shed sensor, noting a previous reading of 13°C.\\n*   **Ferry:** Mira is planning a ferry booking for Friday.\",\n  \"context\": \"The user instructed to \\\"Update the note with that.\\\" This suggests incorporating the details from the memory into a note format.\"\n}",
+      "inputTokens": 2620,
+      "outputTokens": 181,
+      "loadMs": 1.271417,
+      "outputBytes": 643,
+      "latencyMs": 5230.936791999993
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 1058,
+      "raw": "{\"markdown\": \"The user instructed to \\\"Update the note with that.\\\" This suggests incorporating the details from the memory into a note format.\", \"context\": \"The user instructed to \\\"Update the note with that.\\\" This suggests incorporating the details from the memory into a note format.\"}",
+      "inputTokens": 161,
+      "outputTokens": 58,
+      "loadMs": 1.054708,
+      "outputBytes": 289,
+      "latencyMs": 984.664208000002
+    },
+    {
+      "operation": "prepare",
+      "inputBytes": 925,
+      "raw": "{\"markdown\": \"I'm ready to update the note with the information you provide.\", \"context\": \"The host task is to draft a note update, and I am awaiting the content to include in that update.\"}",
+      "inputTokens": 138,
+      "outputTokens": 46,
+      "loadMs": 1.031542,
+      "outputBytes": 190,
+      "latencyMs": 840.5062919999909
+    },
+    {
+      "operation": "observe",
+      "inputBytes": 3363,
+      "raw": "{\n  \"markdown\": \"### Ongoing Activities\\n\\n*   **Fictional Activities (000-099):** All 100 fictional activities remain open, with owner Mira awaiting supplied evidence for each.\\n*   **Radiator Purchase:** The Neri H6 water radiator (710mm W x 880mm H, 590mm pipe centres) is noted. The wall opening is 760mm wide, and the order is pending.\\n*   **Sensors:** Mira is investigating the shed sensor, noting a previous reading of 13°C.\\n*   **Ferry:** Mira is planning a ferry booking for Friday.\",\n  \"context\": \"The user instructed to \\\"Update the note with that.\\\" This suggests incorporating the details from the memory into a note format. No note tool was executed.\"\n}",
+      "inputTokens": 681,
+      "outputTokens": 187,
+      "loadMs": 1.049417,
+      "outputBytes": 670,
+      "latencyMs": 3207.479542000001
+    }
+  ],
+  "scores": "Unscored: human review required",
+  "limits": [
+    "Provider token counts describe actual inputs; no portable tokenizer preflight is claimed.",
+    "First call may load a model; load duration recorded separately.",
+    "Synthetic text-only client; no actual external action."
+  ],
+  "latency": {
+    "firstCallMs": 5593.671125,
+    "calls": 52,
+    "prepare": {
+      "count": 12,
+      "p50": 2150.7256250000064,
+      "p95": 5238.105708999996
+    },
+    "observe": {
+      "count": 12,
+      "p50": 2478.406874999997,
+      "p95": 3215.631792
+    }
+  }
+}

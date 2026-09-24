@@ -138,3 +138,22 @@ test('malformed, oversized and symlink scratchpads fail without replacing data',
   await assert.rejects(foam.prepare(encounter));
   assert.equal(await readFile(target, 'utf8'), 'untouched');
 });
+
+test('caller mutation after prepare cannot change the committed encounter identity', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'foam-caller-mutation-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  let proceed!: () => void;
+  let entered!: () => void;
+  const waiting = new Promise<void>(resolve => { proceed = resolve; });
+  const ready = new Promise<void>(resolve => { entered = resolve; });
+  const foam = new Foam({ directory, scope: 'private', inference: { async infer(input) {
+    entered(); await waiting; assert.equal(input.encounter.occurrence, 'original');
+    return { markdown: 'Known.', context: '' };
+  } } });
+  const encounter = { cue: 'one', occurrence: 'original' };
+  const pending = foam.prepare(encounter);
+  await ready;
+  encounter.occurrence = 'mutated';
+  proceed();
+  assert.equal((await pending).access.occurrence, 'original');
+});

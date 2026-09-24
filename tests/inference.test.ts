@@ -41,3 +41,12 @@ test('configuration requires an explicit model, endpoint and secure remote trans
   assert.throws(() => jsonInference({ endpoint: 'http://remote.example/v1', model: 'test' }), /HTTPS/);
   assert.throws(() => jsonInference({ endpoint: 'https://example.com', model: '' }), /model/);
 });
+
+test('HTTP adapter retains noncredential provider query parameters', async t => {
+  t.mock.method(globalThis, 'fetch', async (url: URL) => {
+    assert.equal(url.searchParams.get('api-version'), 'fixture');
+    return Response.json({ choices: [{ finish_reason: 'stop', message: { content: '{"markdown":"","context":""}' } }] });
+  });
+  const adapter = jsonInference({ endpoint: 'https://example.com/chat/completions?api-version=fixture', model: 'fixture' });
+  await adapter.infer(input, new AbortController().signal);
+});

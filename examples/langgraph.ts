@@ -2,7 +2,7 @@ import { Annotation, StateGraph, START, END } from '@langchain/langgraph';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { Foam } from '../dist/index.js';
+import { initializeProject, openProjectMemory } from '../dist/index.js';
 import { memoryNodes } from '../dist/adapters/langgraph.js';
 import type { Access } from '../dist/index.js';
 import { fixtureInference, cues } from './fixture.js';
@@ -13,7 +13,8 @@ try {
     cue: Annotation<string>(), occurrence: Annotation<string>(), observations: Annotation<string[]>(),
     foamContext: Annotation<string>(), foamRevision: Annotation<number>(), foamAccess: Annotation<Access | undefined>(),
   });
-  const foam = new Foam({ directory, scope: 'synthetic:alex', inference: fixtureInference });
+  await initializeProject(directory, 'synthetic');
+  const foam = await openProjectMemory({ projectRoot: directory, scope: 'synthetic', inference: fixtureInference });
   const nodes = memoryNodes(foam);
   const graph = new StateGraph(State)
     .addNode('prepare', nodes.prepare)

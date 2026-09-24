@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "source": "0.2 frozen catalog: bundled/split description and note reference",
+  "description": "Luma R8 is a water radiator, width 620 mm, height 910 mm and pipe centres 540 mm.",
+  "request": "Update the note with that.",
+  "expected": [
+    "The later request refers to Luma R8, a water radiator, with unchanged dimension associations.",
+    "Neither the request nor an assistant claim proves that a note tool ran.",
+    "Role-labelled tool results remain distinct from user evidence."
+  ]
+}
