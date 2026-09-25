@@ -18,7 +18,7 @@ These are intended experiences, not reliability claims or bundled chat integrati
 The host explicitly controls shared memory scope across sessions or channels.
 See [the vision](VISION.md) for the purpose, examples and unresolved design questions.
 
-**0.2.0 is an experimental release.** The TypeScript core, Pi extension and LangGraph helpers
+**0.3.0 is an experimental release.** The TypeScript core, Pi extension and LangGraph helpers
 share one replaceable inference policy. Biological research motivates hypotheses;
 FOAM is not a validated cognitive model. Its current policy and
 [partial-recollection evaluations](docs/evaluations/partial-recollection-v1.md) now
@@ -32,7 +32,7 @@ Node **22.19 or newer**. The package is distributed through GitHub releases;
 there is no npm registry publication.
 
 ```sh
-npm install https://github.com/villetakanen/foam/releases/download/v0.2.0/villetakanen-foam-0.2.0.tgz
+npm install https://github.com/villetakanen/foam/releases/download/v0.3.0/villetakanen-foam-0.3.0.tgz
 ```
 
 For development and the reproducible synthetic demos:
@@ -49,9 +49,9 @@ npm run demo:graph
 The demos use an explicitly scripted inference fixture and fictional data. The graph
 demo executes LangGraph; it does not call an application LLM.
 
-## Project setup (0.2)
+## Project setup
 
-After installing 0.2, initialize the project explicitly:
+After installing the package, initialize the project explicitly:
 
 ```sh
 npx foam init "$PWD" private
@@ -59,7 +59,8 @@ npx foam status "$PWD" private
 ```
 
 `foam.config.json` is shareable; `.foam/` is ignored runtime state. The initializer
-preserves existing files and settings. Configure a backend or inject an adapter:
+preserves existing files and settings. Pi needs no inference entry; applications supply
+a host adapter. A configuration with optional budgets and tracing looks like:
 
 ```json
 {
@@ -71,20 +72,22 @@ preserves existing files and settings. Configure a backend or inject an adapter:
     "team": { "directory": "team" }
   },
   "budgets": { "maxMemoryBytes": 12288, "maxInputBytes": 20480, "maxContextBytes": 2048, "timeoutMs": 30000 },
-  "inference": { "endpoint": "http://127.0.0.1:11434/v1/chat/completions", "model": "gemma4:e4b" },
   "trace": { "maxBytes": 65536, "maxRecords": 100 }
 }
 ```
 
-For an authenticated backend, add `"apiKeyEnv": "MY_MODEL_KEY"` to `inference` and
+For a dedicated backend, add an `inference` entry with `endpoint` (the complete
+chat-completions URL) and `model`. For authentication, add `"apiKeyEnv": "MY_MODEL_KEY"` to `inference` and
 set that variable outside the config. Never put credentials in the file or URL.
 Backend performance and quality depend on the model; this is not a model endorsement.
 The JSON schema version and policy version are distinct. Unknown fields are rejected.
 
 ```ts
 import { openProjectMemory } from '@villetakanen/foam';
-const foam = await openProjectMemory({ projectRoot: process.cwd(), scope: 'private' });
-// Embedded clients can instead pass inference: myInProcessAdapter.
+const foam = await openProjectMemory({
+  projectRoot: process.cwd(), scope: 'private', hostInference: myHostAdapter,
+});
+// Pi supplies its host adapter automatically; see the LangGraph example below.
 ```
 
 The host chooses and authorizes the scope. No parent-directory search, client-name
@@ -130,7 +133,18 @@ they are not delivery receipts or retry-deduplication keys.
 
 ## Inference configuration
 
-Supply an explicit model and complete chat-completions endpoint. For an installed
+Pi uses its current session model and authentication by default. LangGraph applications
+pass their existing model to `langGraphInference` (below). These are separate, bounded
+memory calls: they consume additional time and model quota. Authorized memory goes to
+the selected host provider, which may be remote.
+
+Selection order is explicit `inference` adapter, project `inference` configuration,
+then `hostInference`. A provider failure never triggers a fallback. Existing 0.2
+projects keep their configured backend. To use the host model, remove only the
+`inference` entry from `foam.config.json`; keep scope and memory unchanged.
+The configuration schema and `policyVersion: "0.2"` remain unchanged in 0.3.
+
+For a dedicated backend, supply an explicit model and complete chat-completions endpoint. For an installed
 local Ollama model, start `ollama serve` and use:
 
 ```sh
@@ -159,12 +173,12 @@ The tokenizer must include provider framing; byte counts are not portable token 
 
 ## Pi quickstart
 
-Tested with `@earendil-works/pi-coding-agent@0.86.0` (the current package namespace).
+Tested with `@earendil-works/pi-coding-agent` 0.86.0 and 0.87.0.
 From a source checkout after `npm ci && npm run build`:
 
 ```sh
 node dist/cli.js init "$PWD" private
-# Configure inference in foam.config.json as shown above.
+# Select and authenticate your model in Pi; no FOAM endpoint is needed.
 export FOAM_SCOPE=private
 npx pi -e ./dist/adapters/pi.js
 ```
@@ -176,6 +190,12 @@ The package also declares its extension in Pi package metadata.
 Try: “The sink is leaking; Alex is waiting for the plumber appointment.” Then switch
 to planning a train trip, return to the repair, report completion, and mention an old
 plumber reminder. `/foam` opens a read-only inspection view (editor changes are discarded).
+
+Model selection is read at each memory operation, so switching Pi's model takes effect
+on the next operation. Pi resolves provider credentials and headers; FOAM does not
+store them. Memory calls use no agent tools, make no extra agent turns, and do not
+enter the visible conversation. `/foam` includes the selected backend. Missing model,
+authentication or provider errors leave memory intact and Pi continues without stale context.
 
 The extension prepares a fresh block at every `context` event and removes earlier
 FOAM blocks. `turn_end` supplies visible assistant text and actual tool results.
@@ -196,11 +216,36 @@ Tested with `@langchain/langgraph@1.4.16`. Install that package separately; FOAM
 helpers do not require it at runtime. See the complete [graph example](examples/langgraph.ts).
 
 ```ts
-import { memoryNodes } from '@villetakanen/foam/langgraph';
+import { openProjectMemory } from '@villetakanen/foam';
+import { langGraphInference, memoryNodes, MEMORY_CALL_TAG } from '@villetakanen/foam/langgraph';
+const foam = await openProjectMemory({
+  projectRoot: process.cwd(), scope: 'private',
+  hostInference: langGraphInference(model), // Your existing unbound chat model.
+});
 const memory = memoryNodes(foam);
 // Compose: START -> memory.prepare -> your model node -> memory.observe -> END.
 // Your model node supplies state.foamContext once and returns observations: string[].
 ```
+
+For routed models, pass `langGraphInference((messages, options) =>
+chooseModel().invoke(messages, options))`. The callback receives cancellation, tags,
+metadata and a `maxTokens` budget (4096 by default). Map that budget to your provider's
+output-limit option if its SDK does not accept per-call `maxTokens`. Configure SDK
+retries on the supplied model; FOAM itself invokes it once and does not repair replies.
+Pass the model or a model-only callback, never a compiled agent or tool executor.
+
+Memory calls carry `foam:memory` and `langsmith:nostream` tags. Applications must filter
+their visible stream, for example:
+
+```ts
+for await (const event of graph.streamEvents(input, { version: 'v2' })) {
+  if (event.tags?.includes(MEMORY_CALL_TAG)) continue;
+  if (event.event === 'on_chat_model_stream') display(event.data.chunk);
+}
+```
+
+Tags identify calls; they do not make arbitrary application callbacks private.
+See [the shared-model example](examples/langgraph-host.ts) for an executing graph and filter.
 
 State carries `cue`, `occurrence`, `observations`, `foamRevision`, `foamContext` and
 `foamAccess`. The prepare helper sets the memory fields; observe records exposure and
@@ -229,7 +274,7 @@ multiple blocks, wrong fields/types, malformed or oversized output fail. Exporte
 See [the embedded example](examples/embedded.ts), which needs no HTTP service.
 
 Pass `diagnostics(record)` to receive operation phases, correlation, revisions,
-normalization, timing and outcomes. Opt into `diagnosticDetails: true` for before/after
+normalization, backend identity when available, timing and outcomes. Opt into `diagnosticDetails: true` for before/after
 Markdown and supplied context. Optional `trace` limits enable an atomic local ring;
 old records rotate, oversized records report loss. Trace history is never model input.
 `foam.status()`, the CLI inspection command and Pi `/foam` inspect without inference.
@@ -281,7 +326,7 @@ are deferred.
 
 ## Project practices
 
-See the [roadmap](ROADMAP.md) and [0.2 delivery plan](docs/releases/0.2.0-plan.md) for scope and release gates.
+See the [roadmap](ROADMAP.md) and [0.3 delivery plan](docs/releases/0.3.0-plan.md) for scope and release gates.
 
 [ASDLC.io](https://asdlc.io/practices/) is our practices library. The
 [living contract](specs/memory/spec.md), [architecture decision](docs/decisions/0001-markdown-core.md)

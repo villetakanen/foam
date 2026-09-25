@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0 — 2026-09-25
+
+- Pi defaults to its active model and provider authentication; model changes apply to
+  the next memory operation. Tested with Pi 0.86.0 and 0.87.0.
+- LangGraph applications can pass an existing chat model or routing callback, with
+  cancellation and tagged calls for filtering memory output from visible streams.
+- Explicit adapters and configured project backends retain precedence. No fallback
+  on provider failure; no memory-policy or storage migration.
+- Read-only status and diagnostics include backend identity when supplied. Pi retains
+  the actual initialization error for inspection.
+
+
 ## 0.2.0 — 2026-09-24
 
 - Make partial-recollection probes the default semantic eval: fresh-session file

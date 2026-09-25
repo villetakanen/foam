@@ -76,7 +76,8 @@ test('Pi project-open failure cannot reuse a previous project binding', async t 
   const foam = new Foam({ directory, scope: 'old-project', inference: fixtureInference });
   let fail = false;
   const handlers = new Map<string, any>();
-  registerFoam({ on: (name: string, handler: any) => handlers.set(name, handler), registerCommand() {}, appendEntry() {} } as unknown as ExtensionAPI,
+  let inspectHandler: any;
+  registerFoam({ on: (name: string, handler: any) => handlers.set(name, handler), registerCommand(_name: string, command: any) { inspectHandler = command.handler; }, appendEntry() {} } as unknown as ExtensionAPI,
     async () => { if (fail) throw new Error('New project has no config'); return foam; });
   const notices: string[] = [];
   const ctx = { cwd: directory, ui: { notify(message: string) { notices.push(message); } }, sessionManager: { getBranch: () => [] } };
@@ -89,4 +90,6 @@ test('Pi project-open failure cannot reuse a previous project binding', async t 
   assert.deepEqual(await handlers.get('context')({ messages: [] }, ctx), { messages: [] });
   assert.equal((await foam.inspect()).revision, revision);
   assert.match(notices.at(-1)!, /New project has no config/);
+  await inspectHandler('', ctx);
+  assert.match(notices.at(-1)!, /FOAM project is not open: New project has no config/);
 });

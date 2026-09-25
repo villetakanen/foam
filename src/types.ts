@@ -35,7 +35,14 @@ export interface InferenceInput {
   limits: { memoryBytes: number; contextBytes: number };
 }
 export interface InferenceAdapter {
-  infer(input: InferenceInput, signal: AbortSignal, diagnostics?: (metadata: { normalized: boolean }) => void): Promise<unknown>;
+  /** Read-only identity; never include credentials or resolve authentication here. */
+  describe?(): InferenceBackend;
+  infer(input: InferenceInput, signal: AbortSignal, diagnostics?: (metadata: { normalized?: boolean; backend?: InferenceBackend }) => void): Promise<unknown>;
+}
+export interface InferenceBackend {
+  source: string;
+  provider?: string;
+  model?: string;
 }
 export interface Metrics {
   inferenceCalls: number;
@@ -86,6 +93,7 @@ export interface DiagnosticRecord {
   beforeRevision?: number;
   afterRevision?: number;
   normalized?: boolean;
+  backend?: InferenceBackend;
   outcome: 'committed' | 'failed' | 'supplied';
   failureReason?: string;
   details?: { before?: string; after?: string; suppliedContext?: string };

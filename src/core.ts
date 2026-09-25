@@ -105,7 +105,10 @@ export class Foam {
     let coordinationGate = false;
     try { await lstat(join(this.directory, '.coordination.lock')); coordinationGate = true; }
     catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
-    return { snapshot, directory: this.directory, writer: await inspectWriter(this.directory), coordinationGate, trace, diagnosticLoss };
+    let backend;
+    try { backend = this.options.inference.describe?.(); }
+    catch (error) { diagnosticLoss.push(`Backend identity unavailable: ${errorMessage(error)}`); }
+    return { snapshot, directory: this.directory, backend, writer: await inspectWriter(this.directory), coordinationGate, trace, diagnosticLoss };
   }
   async recover() { await this.validateDirectory(); await mkdir(this.directory, { recursive: true, mode: 0o700 }); return recoverWriter(this.directory); }
   private async diagnose(record: DiagnosticRecord, losses: string[], local: boolean) {
@@ -191,7 +194,10 @@ export class Foam {
       let output: unknown;
       try {
         // Copy isolates model adapters from mutating revision/scope state used for the commit.
-        output = await Promise.race([Promise.resolve().then(() => this.options.inference.infer(structuredClone(input), controller.signal, metadata => { record.normalized = metadata.normalized; })), timeout]);
+        output = await Promise.race([Promise.resolve().then(() => this.options.inference.infer(structuredClone(input), controller.signal, metadata => {
+          if (metadata.normalized !== undefined) record.normalized = metadata.normalized;
+          if (metadata.backend !== undefined) record.backend = metadata.backend;
+        })), timeout]);
       } finally { clearTimeout(timer); }
       const proposal = validateInterpretation(output);
       if (byteLength(proposal.markdown) > this.limits.memoryBytes || byteLength(proposal.context) > this.limits.contextBytes) throw new Error('Interpreter output exceeds budget');

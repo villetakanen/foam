@@ -86,10 +86,11 @@ export async function projectStatus(projectRoot: string, scope: string) {
   if (!Object.hasOwn(config.scopes, scope)) throw new Error('Scope is not declared by this project');
   const binding = config.scopes[scope]!;
   return { config, configuration: join(root, 'foam.config.json'), directory: childPath(childPath(root, config.memoryRoot), binding.directory), scope: binding.scope ?? scope,
-    backend: config.inference ? { endpoint: config.inference.endpoint, model: config.inference.model } : 'injected adapter required' };
+    backend: config.inference ? { endpoint: config.inference.endpoint, model: config.inference.model } : 'host or injected adapter required' };
 }
 
 export async function openProjectMemory(options: { projectRoot: string; scope: string; inference?: InferenceAdapter;
+  hostInference?: InferenceAdapter;
   diagnostics?: FoamOptions['diagnostics']; diagnosticDetails?: boolean }): Promise<Foam> {
   const status = await projectStatus(options.projectRoot, options.scope);
   let inference = options.inference;
@@ -99,7 +100,17 @@ export async function openProjectMemory(options: { projectRoot: string; scope: s
     if (apiKeyEnv && !apiKey) throw new Error(`Missing credential environment variable ${apiKeyEnv}`);
     inference = jsonInference({ ...backend, ...(apiKey ? { apiKey } : {}) });
   }
-  if (!inference) throw new Error('Inject inference or configure a project backend');
+  const source = options.inference ? 'explicit' : inference ? 'project' : 'host';
+  inference ??= options.hostInference;
+  if (!inference) throw new Error('Inject inference, supply host inference, or configure a project backend');
+  const selected = inference;
+  const describe = () => ({ ...selected.describe?.(), source,
+    ...(source === 'project' ? { model: status.config.inference!.model } : {}) });
+  inference = { describe, async infer(input, signal, diagnostics) {
+    diagnostics?.({ backend: describe() });
+    return selected.infer(input, signal, metadata => diagnostics?.({ ...metadata,
+      ...(metadata.backend ? { backend: { ...metadata.backend, source } } : {}) }));
+  } };
   return new Foam({ directory: status.directory, directoryRoot: await realpath(resolve(options.projectRoot)), scope: status.scope, inference, ...status.config.budgets,
     ...(status.config.trace ? { trace: status.config.trace } : {}),
     ...(options.diagnostics ? { diagnostics: options.diagnostics } : {}),

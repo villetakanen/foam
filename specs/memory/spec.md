@@ -201,3 +201,38 @@ available through `npm run eval:activity`; the radiator runner through
 `npm run eval:semantic:legacy`. Their before/after reports and original judgements
 remain intact. Do not silently rescore them under the current purpose. The unpromoted
 causal-policy candidate and its comparison reports also remain available.
+
+
+## 0.3 host inference
+
+Project binding selects explicit `inference`, then configured project backend, then
+`hostInference`. Absence of all three is a setup error. Failures never switch backends.
+Existing configurations retain their backend; opting into host inference requires
+removing the configured override. Scope remains explicit and independent of model choice.
+Configuration schema, storage and interpreter policy version 0.2 are unchanged.
+
+The default Pi extension resolves the current model and provider registry at each
+operation. It captures that selection for the call and uses registry `streamSimple`,
+including host-managed authentication and headers. It sends only FOAM instruction and
+evidence, with no tools or agent turn. Its default output limit is 4096 tokens and
+provider retries are disabled. Missing model/auth or provider errors preserve memory;
+Pi reports the cause and continues without stale context. Inspection retains initialization
+errors and reports current backend identity without invoking inference.
+
+`langGraphInference` accepts an existing chat model or caller-owned routing callback.
+It invokes once with two messages, cancellation, output budget, optional configuration,
+and `foam:memory` / `langsmith:nostream` tags. The application must map the budget to
+provider-specific options, configure SDK retries, and filter memory-tagged model events
+from user-visible output. A model-only callback must not execute tools or an agent graph.
+No LangChain runtime dependency is introduced into the portable package.
+
+Both adapters decode bounded JSON through the shared decoder. Invalid, oversized,
+tool-call or explicitly incomplete output fails without committing memory. Strings or
+responses without finish metadata cannot prove completion beyond valid bounded JSON.
+Timeout/abort, revision and atomic-write protections remain in the core. Backend
+identity may appear in diagnostics and read-only status; credentials do not.
+
+Verification covers an actual Pi session with custom provider/authentication and a
+model switch on Pi 0.86 and 0.87, and an executing graph sharing one chat model and
+filtering its memory events. Live local-provider recollection probes supplement these
+routing tests; they do not establish compatibility with every provider or OAuth flow.

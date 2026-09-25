@@ -1,5 +1,15 @@
 # Roadmap
 
+## 0.3.0 — host model by default
+
+Agreed direction, 2026-09-25: use Pi's active session model and authentication, and
+let LangGraph applications supply their existing model or model-calling function.
+An explicitly configured backend remains an override; memory scope stays explicit.
+No second model service should be required. See the
+[0.3.0 plan](docs/releases/0.3.0-plan.md) for sequencing, compatibility and acceptance.
+Delivered in 0.3.0.
+Memory policy and existing backend configurations are unchanged.
+
 ## Purpose clarification — 2026-09-24
 
 FOAM explores fleeting, partial recollection that adds contextual awareness. The

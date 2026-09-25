@@ -1,5 +1,7 @@
 import { randomUUID } from 'node:crypto';
-import type { ExtensionAPI } from '@earendil-works/pi-coding-agent';
+import type { ExtensionAPI, ExtensionContext } from '@earendil-works/pi-coding-agent';
+import { piInference } from './pi-inference.js';
+export { piInference } from './pi-inference.js';
 import { Foam } from '../core.js';
 import { openProjectMemory } from '../project.js';
 import { inferenceFromEnv } from '../inference.js';
@@ -15,8 +17,10 @@ function visibleText(value: unknown): string {
     .map(part => part.text).join('\n');
 }
 
-export function registerFoam(pi: ExtensionAPI, binding: Foam | ((projectRoot: string) => Promise<Foam>)) {
+export function registerFoam(pi: ExtensionAPI, binding: Foam | ((projectRoot: string, context: () => ExtensionContext) => Promise<Foam>)) {
   let foam: Foam | undefined;
+  let currentContext: ExtensionContext;
+  let initializationError: string | undefined;
   let recentExchange: ExchangeMessage[] = [];
   let cue = '';
   let prepared: Result | undefined;
@@ -28,6 +32,8 @@ export function registerFoam(pi: ExtensionAPI, binding: Foam | ((projectRoot: st
     pi.appendEntry('foam-revision', { scope: foam.scope, revision });
   };
   pi.on('session_start', async (_event, ctx) => {
+    currentContext = ctx;
+    initializationError = undefined;
     foam = undefined;
     disabled = true;
     revision = undefined;
@@ -36,11 +42,12 @@ export function registerFoam(pi: ExtensionAPI, binding: Foam | ((projectRoot: st
     cue = '';
     let current: Snapshot;
     try {
-      foam = typeof binding === 'function' ? await binding(ctx.cwd) : binding;
+      foam = typeof binding === 'function' ? await binding(ctx.cwd, () => currentContext) : binding;
       current = await foam.inspect();
     } catch (error) {
       foam = undefined;
-      ctx.ui.notify(`FOAM disabled: ${(error as Error).message}`, 'warning');
+      initializationError = error instanceof Error ? error.message : String(error);
+      ctx.ui.notify(`FOAM disabled: ${initializationError}`, 'warning');
       return;
     }
     disabled = false;
@@ -56,6 +63,7 @@ export function registerFoam(pi: ExtensionAPI, binding: Foam | ((projectRoot: st
   });
   pi.on('before_agent_start', async event => { cue = event.prompt; prepared = undefined; });
   pi.on('context', async (event, ctx) => {
+    currentContext = ctx;
     const messages = event.messages.filter(message => !(message.role === 'custom' && message.customType === 'foam-context'));
     prepared = undefined;
     if (disabled || !foam) return { messages };
@@ -80,6 +88,7 @@ export function registerFoam(pi: ExtensionAPI, binding: Foam | ((projectRoot: st
     }
   });
   pi.on('turn_end', async (event, ctx) => {
+    currentContext = ctx;
     if (!prepared || disabled || !foam) return;
     const result = prepared;
     prepared = undefined;
@@ -106,7 +115,8 @@ export function registerFoam(pi: ExtensionAPI, binding: Foam | ((projectRoot: st
   pi.registerCommand('foam', {
     description: 'Inspect current FOAM Markdown and revision without an encounter',
     handler: async (_args, ctx) => {
-      if (!foam) { ctx.ui.notify('FOAM project is not open', 'warning'); return; }
+      currentContext = ctx;
+      if (!foam) { ctx.ui.notify(`FOAM project is not open${initializationError ? `: ${initializationError}` : ''}`, 'warning'); return; }
       const status = await foam.status();
       await ctx.ui.editor(`FOAM ${status.snapshot.scope} · revision ${status.snapshot.revision} (inspection only)`, JSON.stringify(status, null, 2));
     },
@@ -121,6 +131,6 @@ export default function foamExtension(pi: ExtensionAPI) {
     registerFoam(pi, new Foam({ directory: process.env.FOAM_DIRECTORY, scope, inference: inferenceFromEnv() }));
   } else {
     if (process.env.FOAM_MODE && process.env.FOAM_MODE !== 'project') throw new Error('Invalid FOAM_MODE');
-    registerFoam(pi, projectRoot => openProjectMemory({ projectRoot, scope }));
+    registerFoam(pi, (projectRoot, context) => openProjectMemory({ projectRoot, scope, hostInference: piInference(context) }));
   }
 }
